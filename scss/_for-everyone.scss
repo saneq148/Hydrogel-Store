@@ -1,0 +1,19 @@
+.brands {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.brands__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  img {
+    height: 5rem;
+    width: 5rem;
+    object-fit: contain;
+    @include breakpoint($small-bp) {
+      height: 7.5rem;
+      width: 7.5rem;
+    }
+  }
+}

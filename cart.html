@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cart</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="/js/store.js" async></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header__logo">
+          <a href="/">Brand Name</a>
+        </div>
+        <div class="header-nav">
+          <nav class="navigation">
+            <ul class="nav">
+              <li class="nav__item"><a href="/#how-to">Як поклеїти?</a></li>
+              <li class="nav__item"><a href="/#">Інструкція</a></li>
+              <li class="nav__item"><a href="/#">Доставка</a></li>
+              <li class="nav__item"><a href="/#">Каталог</a></li>
+              <li class="nav__item"><a href="/#">Замовити</a></li>
+              <li class="nav__item social-links">
+                <div class="links__item">
+                  <a href="#">
+                    <img src="assets/icons/instagram.svg" alt="">
+                  </a>
+                </div>
+                <div class="links__item">
+                  <a href="#">
+                    <img src="assets/icons/prom.png" alt="">
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <div class="close-burger">
+            </div>
+          </nav>
+          <div class="cart-icon">
+            <div class="cart-icon__count"></div>
+            <a href="/cart.html"><img src="assets/icons/cart.svg" alt=""></a>
+          </div>
+          <div class="burger">
+            <span class="burger__span"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="section-cart">
+        <div class="container">
+          <div class="content">
+            <div class="cart">
+              <h1 class="main-header">Корзина</h1>
+                <div class="cart-items"></div>
+              <div class="cart-total">Загальна вартість: <span class="cart__price">0</span></div>
+              <div class="cart-order-btn"><a class="btn--highlited btn btn--primary btn--center btn-a" onclick="order()">Замовити</a></div>
+            </div>
+            <a href="/" class="btn--transparent btn--black-text btn btn--primary btn--center btn-a">На головну</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="text/javascript">
+    var burger = document.querySelector(".burger");
+    var nav = document.querySelector(".navigation");
+    var body = document.querySelector("body");
+    burger.onclick = function () {
+      burger.classList.toggle('burger--open');
+      nav.classList.toggle('navigation--open');
+      body.classList.toggle('scroll-lock');
+    }
+  </script>
+</body>

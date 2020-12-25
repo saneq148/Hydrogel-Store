@@ -1,0 +1,59 @@
+.faq__item {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .25);
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  max-width: 70rem;
+  margin: auto;
+  summary {
+    background: #fff;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    &::-webkit-details-marker {
+      display: none;
+    }
+    &:after {
+      background: url('../assets/icons/arrow.svg');
+      height: 32px;
+      width: 32px;
+      flex-shrink: 0;
+      margin-left: 1rem;
+      content: "";
+      transition: transform .25s linear;
+      transform: rotate(0deg);
+    }
+    @include breakpoint($tabled-bp) {
+      font-size: 1.8rem;
+    }
+  }
+  &[open] {
+    summary {
+      &:after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  p {
+    animation-name: invisiblyGrowFontSize, linear;
+    animation-duration: 250ms, 200ms;
+    animation-delay: 0ms, 500ms;
+    font-size: 1.2rem;
+    padding: 1rem 0 0;
+    @include breakpoint($tabled-bp) {
+      font-size: 1.5rem;
+    }
+  }
+}
+@keyframes invisiblyGrowFontSize {
+	0% {
+    font-size: 0;
+    opacity: 0;
+	}
+	100% {
+    font-size: 1.2rem;
+    opacity: 0;
+	}
+}

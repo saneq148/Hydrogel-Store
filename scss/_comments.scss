@@ -1,0 +1,62 @@
+.section--comments {
+  background-image: url('../assets/img/comments-bg.jpg');
+  background-position: center;
+  background-size: cover;
+}
+.slick-list.draggable {
+  width: 100%;
+}
+.comments-wrapper {
+  overflow-x: visible;
+  .slick-dots {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    li {
+      margin: auto 1rem;
+      button{
+        font-size: 0px;
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+        border: 1px solid white;
+        background: transparent;
+        transition: all .2s ease-in;
+        outline: none;
+        cursor: pointer;
+        &:hover {
+          background: #fff;
+          transform: scale(1.5);
+        }
+      }
+      &.slick-active button{
+        background: #fff;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+.comment {
+  background-color: #fff;
+  color: black;
+  padding: 5rem 3rem;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 30px;
+  margin: auto 2rem;
+  outline: none;
+  cursor: pointer;
+  &__text{
+    font-size: 1.6rem;
+  }
+  &__author {
+    margin: 5rem auto 0;
+    img {
+      margin: auto;
+    }
+  }
+  p {
+    font-size: 2.2rem;
+  }
+}

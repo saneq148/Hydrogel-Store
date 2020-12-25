@@ -1,0 +1,45 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 60rem;
+}
+.input {
+  width: 100%;
+  height: 5.5rem;
+  border-radius: 5px;
+  border: 1px solid $grey-for-border;
+  outline: none;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 2.1rem;
+  &:focus {
+    border: 2px solid $primary;
+    box-shadow: 0 0 5px $primary;
+  }
+  &::placeholder {
+    color: $grey-for-text;
+  }
+  &:focus::placeholder {
+    color: transparent;
+  }
+}
+.check-form__label {
+  font-size: 1.2rem;
+  color: $grey-for-border;
+  margin-bottom: .5rem;
+  padding-left: 5px;
+}
+.check .container, .order .container {
+  @include breakpoint($small-bp) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .main-header {
+      padding: 0 0 2rem;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

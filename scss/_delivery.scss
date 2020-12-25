@@ -1,0 +1,33 @@
+.section-delivery {
+  background-image: url('../assets/img/delivery-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.delivery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.delivery-item {
+  margin: 3rem auto;
+  max-width: 400px;
+}
+.delivery-item__image {
+  text-align: center;
+}
+.delivery-item__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  h6 {
+    font-size: 2.4rem;
+    margin: 1rem auto;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+}

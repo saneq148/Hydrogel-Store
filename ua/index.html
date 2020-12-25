@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/js/slick/slick.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="/js/cart.js" async></script>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var loader = document.getElementById('cube-loader');
+        loader.classList.add('hide-loader');
+        setTimeout(() => loader.style.display = "none", 450);
+        document.getElementsByClassName('scroll-lock')[0].classList.remove('scroll-lock')
+    })
+  </script>
+</head>
+<body class="scroll-lock">
+  <div id="cube-loader">
+    <div class="caption">
+      <div class="cube-loader">
+        <div class="cube loader-1"></div>
+        <div class="cube loader-2"></div>
+        <div class="cube loader-4"></div>
+        <div class="cube loader-3"></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <section class="promo-section promo">
+      <div class="section__darken section__darken--grey">
+        <div class="container">
+          <div class="promo__text">
+            <h1><span class="highlited-text">Гідрогелева</span> плівка</h1>
+            <h2>Захистить твій смартфон від подряпин, ударів, води, падінь та інших екстримальних ситуацій</h2>
+          </div>
+          <div class="promo__image">
+            <img src="assets/img/header-image.png" alt="">
+          </div>
+          <div class="promo__buttons">
+            <a href="#buy" class="btn--highlited btn btn--primary btn-a to-animate animate-right">Обери свою</a>
+            <a href="#bonus" class="btn--transparent btn--primary btn-a to-animate animate-right">Отримати бонуси</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header__logo">
+          <a href="/">Brand Name</a>
+        </div>
+        <div class="header-nav">
+          <nav class="navigation">
+            <ul class="nav">
+              <li class="nav__item"><a href="/#how-to">Як поклеїти?</a></li>
+              <li class="nav__item"><a href="/#">Інструкція</a></li>
+              <li class="nav__item"><a href="/#">Доставка</a></li>
+              <li class="nav__item"><a href="/#">Каталог</a></li>
+              <li class="nav__item"><a href="/#">Замовити</a></li>
+              <li class="nav__item social-links">
+                <div class="links__item">
+                  <a href="#">
+                    <img src="assets/icons/instagram.svg" alt="">
+                  </a>
+                </div>
+                <div class="links__item">
+                  <a href="#">
+                    <img src="assets/icons/prom.png" alt="">
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <div class="close-burger">
+            </div>
+          </nav>
+          <div class="cart-icon">
+            <div class="cart-icon__count"></div>
+            <a href="/cart.html"><img src="/assets/icons/cart.svg" alt=""></a>
+          </div>
+          <div class="burger">
+            <span class="burger__span"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+    <section class="crush">
+      <div class="container">
+        <div class="content">
+          <h1 class="main-header to-animate animate-right">Дивись <span class="highlited-text">краш-тест</span></h1>
+          <div class="splash to-animate animate-zoom">
+            <img src="/assets/img/splash.png" alt="">
+            <span class="video-btn"></span>
+          </div>
+          <div class="crush-items-wrapper to-animate animate-left">
+            <ul class="crush-items">
+              <li class="crush-item">Усе необхідне для поклейки йде в комплекті з плівкою.</li>
+              <li class="crush-item">В наявності для будь-якої моделі смартфона, планшета, годинника.</li>
+              <li class="crush-item">Самостійна поклейка всього за 1-2 хвилини.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="for-everyone">
+      <div class="container">
+        <div class="content for-everyone__content">
+          <h1 class="main-header to-animate animate-left">Є <span class="highlited-text">для будь-якої</span> моделі смартфона, планшета та смарт-годинника</h1>
+          <div class="brands">
+            <div class="brands__item to-animate animate-zoom">
+              <img src="/assets/img/apple.jpg" alt="">
+            </div>
+            <div class="brands__item to-animate animate-zoom">
+              <img src="/assets/img/xiaomi.jpg" alt="">
+            </div>
+            <div class="brands__item to-animate animate-zoom">
+              <img src="/assets/img/huawei.jpg" alt="">
+            </div>
+            <div class="brands__item to-animate animate-zoom">
+              <img src="/assets/img/samsung.jpg" alt="">
+            </div>
+            <div class="brands__item to-animate animate-zoom">
+              <img src="/assets/img/apple.jpg" alt="">
+            </div>
+            <div class="brands__item to-animate animate-zoom">
+              <img src="/assets/img/xiaomi.jpg" alt="">
+            </div>
+            <div class="brands__item to-animate animate-zoom">
+              <img src="/assets/img/huawei.jpg" alt="">
+            </div>
+            <div class="brands__item to-animate animate-zoom">
+              <img src="/assets/img/samsung.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="check">
+      <div class="container">
+        <div class="header-image to-animate animate-right">
+          <img src="/assets/img/cover-one.jpg" alt="">
+        </div>
+        <div class="content">
+          <h1 class="main-header to-animate animate-left">Перевірте, чи є у нас плівка <span class="highlited-text">під ваш</span> гаджет:</h1>
+          <form action="" class="form check-form to-animate animate-right">
+            <label for="model" class="check-form__label">Введіть модель телефона:</label>
+            <input class="input" type="text" name="model" id="model" value="" placeholder="Наприклад, Redmi Note 9 pro" required>
+            <label for="phone" class="check-form__label">Ваш телефон, щоб зразу оформити замовлення у випадку наявності:</label>
+            <input class="input" type="phone" name="model" id="phone" value="" placeholder="+380501032020" required>
+            <button type="submit" name="check" class="btn--highlited btn btn--primary">Перевірити</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="how-to section--grey" id="how-to">
+      <div class="container">
+        <div class="content">
+          <h1 class="main-header to-animate animate-right"><span class="highlited-text">Як поклеїти</span> гідрогельову плівку на смартфон?</h1>
+          <p class="sub-header  to-animate animate-left">Гідрогелеву плівку клеїти простіше, ніж скло. Щоб зробити все швидко і якісно, ​​варто дотримуватися цієї інструкції:</p>
+          <div class="splash to-animate animate-zoom">
+            <img src="/assets/img/splash.png" alt="">
+            <span class="video-btn"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="properties" id="properties">
+      <div class="container">
+        <div class="content">
+          <h1 class="main-header main-header--space to-animate animate-left">Гідрогелева плівка дійсно <span class="highlited-text">захистить</span> твій смартфон</h1>
+          <div class="props-items">
+            <div class="props-item to-animate animate-zoom">
+              <div class="props-item__image"><img src="/assets/icons/phone.svg" alt=""></div>
+              <h3 class="props-item__title">Без проміжків.</h3>
+              <p class="props-item__text">Клеїться на весь екран до самого кінця</p>
+            </div>
+            <div class="props-item to-animate animate-zoom">
+              <div class="props-item__image"><img src="/assets/icons/timer.svg" alt=""></div>
+              <h3 class="props-item__title">Легко клеїться.</h3>
+              <p class="props-item__text">Поклейка займає декілька хв., все необхідне є всередині</p>
+            </div>
+            <div class="props-item to-animate animate-zoom">
+              <div class="props-item__image"><img src="/assets/icons/armor.svg" alt=""></div>
+              <h3 class="props-item__title">Вища ступінь міцності.</h3>
+              <p class="props-item__text">В 3 рази міцніше звичайного захисного скла</p>
+            </div>
+            <div class="props-item to-animate animate-zoom">
+              <div class="props-item__image"><img src="/assets/icons/hand.svg" alt=""></div>
+              <h3 class="props-item__title">Олеофобне покриття.</h3>
+              <p class="props-item__text">Палець легко ковзає по екрану.</p>
+            </div>
+            <div class="props-item to-animate animate-zoom">
+              <div class="props-item__image"><img src="/assets/icons/clock.svg" alt=""></div>
+              <h3 class="props-item__title">Автоматичне відновлення.</h3>
+              <p class="props-item__text">Якщо подряпати екран, то подряпина тут же самознищиться</p>
+            </div>
+            <div class="props-item to-animate animate-zoom">
+              <div class="props-item__image"><img src="/assets/icons/iphone.svg" alt=""></div>
+              <h3 class="props-item__title">Будь-який <br>екран.</h3>
+              <p class="props-item__text">Ми вирізаємо і відправляємо плівку саме під ваш екран</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="order" id="order">
+      <div class="container">
+        <div class="header-image to-animate animate-left"><img src="/assets/img/cover-two.jpg" alt=""></div>
+        <div class="content">
+          <h1 class="main-header to-animate animate-right">Зробити <span class="highlited-text">замовлення</span> онлайн</h1>
+          <form action="" class="form order-form  to-animate animate-left">
+            <label for="order-model" class="check-form__label">Введіть модель телефона:</label>
+            <input class="input" type="text" name="model" id="order-model" value="" placeholder="Наприклад, Redmi Note 9 pro" required>
+            <label for="order-name" class="check-form__label">Ваше ім’я:</label>
+            <input class="input" type="text" name="name" id="order-name" value="" placeholder="Наприклад, Володимир" required>
+            <label for="order-phone" class="check-form__label">Ваш телефон:</label>
+            <input class="input" type="phone" name="phone" id="order-phone" value="" placeholder="+380501032020" required>
+            <button type="submit" name="check" class="btn--highlited btn btn--primary to-animate animate-right btn--form">Замовити</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="how-to-order section--black">
+      <div class="container">
+        <div class="content">
+          <h1 class="main-header main-header--space to-animate animate-left">Як мені отримати <span class="highlited-text">гідроплівку?</span></h1>
+          <div class="order-items">
+            <div class="order-item to-animate animate-left">
+              <div class="order-item__icon"><img src="/assets/icons/order1.svg" alt=""></div>
+              <div class="order-item__text">
+                <h3>Оформіть заявку</h3>
+                <p>Ви залишаєте заявку на сайті, в месенджерах або по телефону.</p>
+              </div>
+            </div>
+            <div class="order-item to-animate animate-right">
+              <div class="order-item__icon"><img src="/assets/icons/call.svg" alt=""></div>
+              <div class="order-item__text">
+                <h3>Підтвердьте замовлення</h3>
+                <p>Менеджер зателефонує вам і уточнить модель смартфона або смарт-годинника.</p>
+              </div>
+            </div>
+            <div class="order-item to-animate animate-left">
+              <div class="order-item__icon"><img src="/assets/icons/car.svg" alt=""></div>
+              <div class="order-item__text">
+                <h3>Доставка</h3>
+                <p>Відправляємо Ваше замовлення Новою Поштою в день замовлення. Середній термін доставки 1-2 дні.</p>
+              </div>
+            </div>
+            <div class="order-item to-animate animate-right">
+              <div class="order-item__icon"><img src="/assets/icons/cargo.svg" alt=""></div>
+              <div class="order-item__text">
+                <h3>Отримання товару</h3>
+                <p>Отримуєте замовлення і оплачуєте зручним способом: Готівкою або карткою.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#order" class="btn--highlited btn--primary btn-a to-animate animate-right">Отримати</a>
+        </div>
+      </div>
+    </section>
+    <section class="section--buy section--grey" id="buy">
+      <div class="container">
+        <div class="content">
+          <h1 class="main-header main-header--space to-animate animate-left">Обери свою!</h1>
+          <div class="buy">
+            <div class="buy__item to-animate animate-left">
+              <div class="buy__item-img"><img src="/assets/img/item-1.jpg" alt=""></div>
+              <div class="buy__item-content">
+                <h4 class="order-name" data="item-1">Плівка для смартфона</h4>
+                <h5 class="order-text">Гідрогелева плівка на екран вашого телефону (будь-яка модель)</h5>
+                <div class="price">
+                  <div class="price__current">1грн.</div>
+                  <div class="price__old">500 грн.</div>
+                </div>
+                <button type="button" name="buy" class="btn--buy btn btn--primary">Купити</button>
+              </div>
+            </div>
+            <div class="buy__item to-animate animate-right">
+              <div class="buy__item-img"><img src="/assets/img/item-2.jpg" alt=""></div>
+              <div class="buy__item-content">
+                <h4 class="order-name" data="item-2">Задня плівка</h4>
+                <h5 class="order-text">Гідрогелева плівка на задню сторону вашого телефону</h5>
+                <div class="price">
+                  <div class="price__current">2грн.</div>
+                  <div class="price__old">500 грн.</div>
+                </div>
+                <button type="button" name="buy" class="btn--buy btn btn--primary">Купити</button>
+              </div>
+            </div>
+            <div class="buy__item to-animate animate-left">
+              <div class="buy__item-img"><img src="/assets/img/item-3.jpg" alt=""></div>
+              <div class="buy__item-content">
+                <h4 class="order-name" data="item-3">Повний захист смартфона</h4>
+                <h5 class="order-text">Комплект з двох плівок, одна для екрану телефону, інша для задньої кришки.</h5>
+                <div class="price">
+                  <div class="price__current">3грн.</div>
+                  <div class="price__old">500 грн.</div>
+                </div>
+                <button type="button" name="buy" class="btn--buy btn btn--primary">Купити</button>
+              </div>
+            </div>
+            <div class="buy__item to-animate animate-right">
+              <div class="buy__item-img"><img src="/assets/img/item-4.jpg" alt=""></div>
+              <div class="buy__item-content">
+                <h4 class="order-name" data="item-4">Гідрогелева плівка для інших пристроїв</h4>
+                <h5 class="order-text">Вирізаємо плівки під будь-який планшет, фотоапарат, а також будь-яку модель смарт-годинників</h5>
+                <div class="price">
+                  <div class="price__current">4грн.</div>
+                  <div class="price__old">500 грн.</div>
+                </div>
+                <button type="button" name="buy" class="btn--buy btn btn--primary">Купити</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-delivery section--black" id="delivery">
+      <div class="section__darken">
+      <div class="container">
+          <div class="content">
+            <h1 class="main-header main-header--space to-animate animate-left">Як ми працюємо?</h1>
+            <div class="delivery">
+              <div class="delivery-item to-animate animate-right">
+                <div class="delivery-item__image"><img src="/assets/icons/card.svg" alt=""></div>
+                <div class="delivery-item__text">
+                  <h6>Оплата</h6>
+                  <p>Переказом на картку Приватбанку або Монобанку. Накладним платежем.</p>
+                </div>
+              </div>
+              <div class="delivery-item to-animate animate-left">
+                <div class="delivery-item__image"><img src="/assets/icons/post.svg" alt=""></div>
+                <div class="delivery-item__text">
+                  <h6>Доставка</h6>
+                  <p>Новою Поштою або Укрпоштою за їхніми тарифами. Відправка в день замовлення! Можлива безкоштовна доставка — дивіться акції магазину.</p>
+                </div>
+              </div>
+              <div class="delivery-item to-animate animate-right">
+                <div class="delivery-item__image"><img src="/assets/icons/garanty.svg" alt=""></div>
+                <div class="delivery-item__text">
+                  <h6>Гарантія</h6>
+                  <p>Після поклейки нашої плівки ви більше ніколи не захочете повернутися до звичайного скла на екран!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="faq">
+      <div class="container">
+        <div class="content">
+          <h1 class="main-header main-header--space to-animate animate-left"><span class="highlited-text">Відповіді</span> на часті запитання:</h1>
+          <div class="faq to-animate animate-right">
+            <details class="faq__item">
+              <summary>А у вас точно есть пленка под мой смартфон?</summary>
+              <p>Да, у нас есть пленки под все существующие смартфоны. Вы можете оставить запрос на наличие пленки если сомневаетесь.</p></details>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="comments" class="section--comments section--black">
+      <div class="section__darken section__darken--60">
+        <div class="container">
+            <h1 class="main-header main-header--space">Відгуки покупців</h1>
+            <div class="comments-wrapper">
+              <article class="comment">
+                <div class="comment__text">
+                  Недавно купил новый телефон Huawei P Smart 2019. Надо чем-то защищать экран. В магазине мне предлагали стекло, но я уже в них разочаровался, у меня его максимум на месяц хватает, а потом - трещины, сколы... хотелось попробовать что-то новое. Слышал о новых пленках для смартфонов от знакомых. Заказал и не пожалел. Пленка действительно высокого качества! Уже спасла пару раз мой телефон при падении. Рекомендую!
+                </div>
+                <div class="comment__author">
+                  <img src="/assets/img/ivan.png" alt="">
+                  <p>Иван</p>
+                </div>
+              </article>
+              <article class="comment">
+                <div class="comment__text">
+
+                </div>
+                <div class="comment__author">
+                  <img src="/assets/img/ivan.png" alt="">
+                  <p>Иван</p>
+                </div>
+              </article>
+              <article class="comment">
+                <div class="comment__text">
+                  Недавно купил новый телефон Huawei P Smart 2019. Надо чем-то защищать экран. В магазине мне предлагали стекло, но я уже в них разочаровался, у меня его максимум на месяц хватает, а потом - трещины, сколы... хотелось попробовать что-то новое. Слышал о новых пленках для смартфонов от знакомых. Заказал и не пожалел. Пленка действительно высокого качества! Уже спасла пару раз мой телефон при падении. Рекомендую!
+                </div>
+                <div class="comment__author">
+                  <img src="/assets/img/ivan.png" alt="">
+                  <p>Иван</p>
+                </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="order--footer section--black" id="order--footer">
+      <div class="container">
+        <div class="content">
+          <h1 class="main-header main-header--space to-animate animate-left">Оформити <span class="highlited-text">замовлення</span></h1>
+          <form action="" class="form order-form to-animate animate-zoom">
+            <label for="footer-order-model" class="check-form__label">Введіть модель телефона:</label>
+            <input class="input" type="text" name="model" id="footer-order-model" value="" placeholder="Наприклад, Redmi Note 9 pro" required>
+            <label for="footer-order-name" class="check-form__label">Ваше ім’я:</label>
+            <input class="input" type="text" name="name" id="footer-order-name" value="" placeholder="Наприклад, Володимир" required>
+            <label for="footer-order-phone" class="check-form__label">Ваш телефон:</label>
+            <input class="input" type="phone" name="phone" id="footer-order-phone" value="" placeholder="+380501032020" required>
+            <button type="submit" name="check" class="btn--highlited btn btn--primary btn--form">Замовити</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    </main>
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="content">
+          <div class="links">
+            <div class="links__item">
+              <a href="#">
+                <img src="/assets/icons/instagram.svg" alt="">
+              </a>
+            </div>
+            <div class="links__item">
+              <a href="#">
+                <img src="/assets/icons/prom.png" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="copyright">© 2020  Усі права захищені.</div>
+        </div>
+      </div>
+    </footer>
+    <div class="popup animate__animated animate__faster animate__fadeOutDown">
+      <div class="container">
+      <div class="popup-close"><span class="popup-close__span"></span></div>
+      <div class="content">
+        <div id="player"></div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <script src="/js/libs.min.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/js/slick/slick.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.comments-wrapper').slick({
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: true,
+        infinite: true,
+        responsive: [
+          {
+            breakpoint: 960,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
+    });
+  </script>
+  <script type="text/javascript">
+  var $win = $(window);
+  var $stat = $('.to-animate');
+  var $height =- $(window).height() + 150;
+  $win.on('scroll', function () {
+    var scrollTop = $win.scrollTop();
+    $stat.each(function () {
+      var $self = $(this);
+      var prev=$self.offset();
+      if ( (scrollTop - prev.top) > $height) {
+        if ($self.hasClass("animate-left"))
+          $self.css('opacity', '1').addClass('animate__animated animate__fadeInLeft');
+        if ($self.hasClass("animate-right"))
+          $self.css('opacity', '1').addClass('animate__animated animate__fadeInRight');
+        if ($self.hasClass("animate-zoom"))
+          $self.css('opacity', '1').addClass('animate__animated animate__zoomIn');
+        if ($self.hasClass("animate-bottom"))
+          $self.css('opacity', '1').addClass('animate__animated animate__fadeInDown');
+      }
+    });
+  }).scroll();
+  </script>
+  <script type="text/javascript">
+    window.onscroll = function() {myFunction()};
+    var header = document.getElementById("header");
+    var sticky = header.offsetTop;
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      }
+      else {
+        header.classList.remove("sticky");
+      }
+    }
+  </script>
+  <script type="text/javascript">
+    var burger = document.querySelector(".burger");
+    var nav = document.querySelector(".navigation");
+    var body = document.querySelector("body");
+    burger.onclick = function () {
+      burger.classList.toggle('burger--open');
+      nav.classList.toggle('navigation--open');
+      body.classList.toggle('scroll-lock');
+    }
+  </script>
+  <script>
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          videoId: 'nbp3Ra3Yp74'
+        });
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+  </script>
+  <script type="text/javascript">
+    var popup = document.querySelector(".popup");
+    var splash = document.querySelector(".splash");
+    var popupClose = document.querySelector(".popup-close");
+    var body = document.querySelector("body");
+    splash.onclick = function () {
+      popup.classList.toggle('animate__fadeInUp');
+      popup.classList.toggle('animate__fadeOutDown');
+      body.classList.toggle('scroll-lock');
+    }
+    popupClose.onclick = function () {
+      popup.classList.toggle('animate__fadeOutDown');
+      popup.classList.toggle('animate__fadeInUp');
+      body.classList.toggle('scroll-lock');
+      try {
+        stopVideo();
+      } catch (e) {
+
+      } finally {
+
+      }
+
+    }
+  </script>
+
+</body>
+</html>

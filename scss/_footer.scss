@@ -1,0 +1,26 @@
+.links {
+  display: flex;
+  justify-content: center;
+  &__item {
+    margin: auto 2rem;
+    border: 1px solid $primary;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.footer .container {
+  padding: 3rem;
+}
+.copyright {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+.order--footer .order-form {
+  max-width: 50rem;
+  margin: auto;
+}

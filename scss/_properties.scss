@@ -1,0 +1,48 @@
+.props-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  @include breakpoint($medium-bp){
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 3rem;
+    padding: 0 1rem;
+    .props-item {
+      &__title {
+        font-size: 2rem;
+      }
+      &__text {
+        font-size: 1.4rem;
+      }
+    }
+  }
+  @include breakpoint($tabled-bp){
+    padding: 0 5rem;
+  }
+}
+.props-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  max-width: 24rem;
+  margin: 0 auto;
+  .props-item__image {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin: .5rem auto;
+  }
+  p {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
+}
