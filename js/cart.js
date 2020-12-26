@@ -16,7 +16,7 @@ function ready() {
 function addToCartClicked(event) {
   let button = event.target
   let shopItem = button.parentElement.parentElement
-  let item = shopItem.getElementsByClassName('order-name')[0].getAttribute("data")
+  let item = shopItem.getElementsByClassName('order-name')[0].dataset.item
   let title = shopItem.getElementsByClassName('order-name')[0].innerText
   let price = shopItem.getElementsByClassName('price__current')[0].innerText
   let img = shopItem.getElementsByClassName('buy__item-img')[0].children[0].src
@@ -45,6 +45,7 @@ function addToCartClicked(event) {
   let str = JSON.parse(localStorage.getItem(item))
   //updateCartIcon()
   //console.log(JSON.parse(localStorage.getItem("item-4")));
+
 }
 
 function updateCartIcon(totalCount) {
@@ -59,7 +60,7 @@ function testAddToCartClicked(event) {
   let cartItem = new Object;
   const button = event.target
   const shopItem = button.parentElement.parentElement
-  const item = shopItem.getElementsByClassName('order-name')[0].getAttribute("data")
+  const item = shopItem.getElementsByClassName('order-name')[0].dataset.item
   const title = shopItem.getElementsByClassName('order-name')[0].innerText
   const price = shopItem.getElementsByClassName('price__current')[0].innerText
   const img = shopItem.getElementsByClassName('buy__item-img')[0].children[0].src
@@ -94,5 +95,4 @@ function getTotalCount() {
   if (totalCount !== undefined) {
     updateCartIcon(totalCount)
   }
-  console.log(totalCount);
 }
