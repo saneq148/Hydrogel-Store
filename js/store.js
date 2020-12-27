@@ -9,6 +9,7 @@ function ready() {
   //localStorage.clear();
   //loadCartItems()
   testLoadCartItems()
+  testCartIsEmpty()
   var removeCartItemButtons = document.getElementsByClassName('cart-item__remove')
     for (var i = 0; i < removeCartItemButtons.length; i++) {
       var button = removeCartItemButtons[i]
@@ -27,6 +28,26 @@ function logCart(){
   console.log(JSON.parse(localStorage.getItem('cart')));
 }
 
+function testCartIsEmpty(){
+  var cart = document.getElementsByClassName('cart-items')[0]
+  var total = document.getElementsByClassName('cart-total')[0]
+  var btn = document.getElementsByClassName('cart-order-btn')[0]
+  if (cart.innerHTML === "") {
+    cart.innerHTML = "<div class='cart-is-empty'>Ваша корзина пуста</div>"
+    total.innerHTML = ""
+    btn.innerHTML = ""
+    if (localStorage.getItem("cart") !== null) {
+      cart = JSON.parse(localStorage.getItem("cart"))
+
+      if (cart['totalCount'] === 0) {
+        delete cart['totalCount']
+        console.log(cart['totalCount']);
+        localStorage.removeItem('cart')
+      }
+    }
+  }
+}
+
 function cartIsEmpty() {
   var cart = document.getElementsByClassName('cart-items')[0]
   var total = document.getElementsByClassName('cart-total')[0]
@@ -43,6 +64,7 @@ function testLoadCartItems() {
   let cart = new Object;
   console.log(localStorage.getItem("cart"));
   if (localStorage.getItem("cart") !== null) {
+    console.log(JSON.parse(localStorage.getItem("cart")));
     cart = JSON.parse(localStorage.getItem("cart"))
     for (var i = 1; i <= 4; i++) {
       if (cart[`item${i}`] !== undefined) {
@@ -57,7 +79,7 @@ function testLoadCartItems() {
     updateCartTotal()
   }
   else {
-    cartIsEmpty()
+    testCartIsEmpty()
   }
 }
 
