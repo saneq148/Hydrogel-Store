@@ -4,6 +4,7 @@
   column-gap: 1rem;
   font-size: 1.4rem;
   margin-bottom: 2rem;
+  margin-right: 2rem;
   //max-width: 20rem;
   &__img {
     height: 50px;
@@ -21,11 +22,16 @@
   font-size: 1.6rem;
   margin: 2rem auto 2rem 0;
 }
-.items-in-cart {
+.order-page .items-in-cart {
+  max-width: 32rem;
+  margin: auto;
   display: flex;
   flex-direction: column;
   padding-left: .5rem;
   span {
     font-weight: bold;
+  }
+  @include breakpoint($small-bp) {
+    //flex-direction: row;
   }
 }

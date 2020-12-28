@@ -18,6 +18,7 @@
 @import "popup";
 @import "cart";
 @import "order";
+@import "order-page";
 
 
 html {
@@ -51,6 +52,9 @@ body {
   max-width: 1170px;
   @include breakpoint($medium-bp) {
     padding: 5rem 0;
+  }
+  @include breakpoint($pc-bp) {
+    padding: 5rem;
   }
 }
 .content {

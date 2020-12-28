@@ -60,6 +60,7 @@
     background: url('../assets/icons/close.png');
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
   }
   &__quantity {
     max-width: 55px;
@@ -116,6 +117,7 @@
   height: 25px;
   width: 20px;
   text-align: center;
+  cursor: pointer;
 }
 .minus, .plus, .quantity {
   border-radius: 0;

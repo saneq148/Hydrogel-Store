@@ -7,7 +7,6 @@ function ready() {
   let addToCartButtons = document.getElementsByClassName('btn--buy');
   for (let i = 0; i < addToCartButtons.length; ++i) {
         let button = addToCartButtons[i];
-        button.addEventListener('click', addToCartClicked);
         button.addEventListener('click', testAddToCartClicked);
   }
   getTotalCount()
@@ -56,8 +55,8 @@ function updateCartIcon(totalCount) {
 }
 
 function testAddToCartClicked(event) {
-  let cart = new Object;
-  let cartItem = new Object;
+  let cart = new Object
+  let cartItem = new Object
   const button = event.target
   const shopItem = button.parentElement.parentElement
   const item = shopItem.getElementsByClassName('order-name')[0].dataset.item

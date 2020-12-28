@@ -1,0 +1,26 @@
+.order-details {
+  font-size: 1.6rem;
+  margin: 0 auto 2rem;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  & div {
+    min-width: 32rem;
+    padding-left: 3.3rem;
+    margin-bottom: 1rem;
+  }
+  &__label {
+    color: $grey-for-text;
+    font-size: 1.4rem;
+  }
+  &__text {
+    font-weight: bold;
+  }
+  @include breakpoint($small-bp) {
+    align-items: center;
+    margin-left: 5.5rem;
+  }
+}
+.total-price p {
+  text-align: center;
+}

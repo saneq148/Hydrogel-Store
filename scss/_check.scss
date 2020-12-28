@@ -28,11 +28,15 @@
   color: $grey-for-border;
   margin-bottom: .5rem;
   padding-left: 5px;
+  @include breakpoint($tabled-bp) {
+    font-size: 1.4rem;
+  }
 }
 .check .container, .order .container {
   @include breakpoint($small-bp) {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5rem;
     .main-header {
       padding: 0 0 2rem;
     }

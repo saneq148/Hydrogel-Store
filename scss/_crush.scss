@@ -13,6 +13,7 @@
     width: 32px;
     height: 32px;
     background: url('../assets/icons/yes.svg');
+    background-size: contain;
     flex-shrink: 0;
     margin: -5px 1rem 0 0;
   }
@@ -28,6 +29,14 @@
       .main-header {
         flex-shrink: 0;
         grid-column: 1/3;
+      }
+      .crush-item {
+        font-size: 2.2rem;
+        &:before {
+          margin-right: 3rem;
+          height: 4rem;
+          width: 4rem;
+        }
       }
     }
     .splash {

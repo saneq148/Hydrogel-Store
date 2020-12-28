@@ -77,7 +77,7 @@ echo $total;
                <div class="items-in-cart">
                  <?php
                  for ($i=1; $i <= 4; $i++) {
-                   $cookie =  json_decode($_COOKIE["item-".$i]);
+                   $cookie = json_decode($_COOKIE["item-".$i]);
                    if ($cookie != NULL) {
                      echo '
                      <div class="item-in-cart">
@@ -99,9 +99,9 @@ echo $total;
                <form action="/order.php" method="post" class="form order-form">
                  <input type="text" name="total" value="<?=$total?>" style="display: none">
                  <label for="order-name" class="check-form__label">Ваше ім’я:</label>
-                 <input class="input" type="text" name="name" id="order-name" value="" placeholder="Наприклад, Володимир" >
+                 <input class="input" type="text" name="name" id="order-name" value="" placeholder="Наприклад, Володимир" required>
                  <label for="order-phone" class="check-form__label">Ваш телефон:</label>
-                 <input class="input" type="phone" name="phone" id="order-phone" value="" placeholder="+380501032020" >
+                 <input class="input" type="tel" name="phone" id="order-phone" value="" minlength="10" maxlength="20" placeholder="+380501032020" required>
                  <button type="submit" class="btn--highlited btn btn--primary">Замовити</button>
                </form>
              </div>

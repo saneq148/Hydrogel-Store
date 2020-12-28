@@ -4,11 +4,21 @@ require 'class.smtp.php';
 
 
 for ($i=1; $i <= 4; $i++) {
-  $cookie =  json_decode($_COOKIE["item-".$i]);
-  if ($cookie != NULL) {
-    $item += $cookie;
+  $cookie = json_decode($_COOKIE["item-".$i]);
+  if ($cookie !== NULL) {
+    $test = '
+    <div class="item-in-cart">
+      <div class="item-in-cart__img">
+        <img src='.$cookie->{"img"}.' alt="">
+      </div>
+      <div class="item-in-cart__title">
+        <p>'.$cookie->{"title"}.'</p>
+      </div>
+      <div class="item-in-cart__count">
+        <p>Кількість: '.$cookie->{"count"}.'шт.</p>
+      </div>
+    </div>'.$test;
   }
-
 }
 
 $total = $_POST['total'];
@@ -35,61 +45,113 @@ $email = 'gidrogellutsk@gmail.com';//фильтруем
     $mail->isHTML(true);
     $mail->Body = $body;
     $mail->WordWrap = 50;
-    //$mail->AddAddress($email);
+    $mail->AddAddress($email);
     //$mail->AddAddress('Begezaaaa@gmail.com');
-    if($_COOKIE['item-1'] === NULL){
-      echo "<script>alert('123')</script>";
-    }
+    //if($_COOKIE['item-1'] === NULL){
+    //  echo "<script>alert('123')</script>";
+    //}
 if ($total > 0 & $name !== "" & $phone !== "") {
   if(!$mail->send()) {
     echo $mail->Body;
     exit;
   }
   else {
-     echo "
-     <!DOCTYPE html>
-     <html lang='uk' dir='tr'>
-       <head>
-         <meta charset='utf-8'>
-         <link rel='stylesheet' href='css/main.css'>
-         <title></title>
-         <meta name='viewport' content='width=420, user-scalable=no'>
-       </head>
-       <body class='t-body'>
+     echo "<!DOCTYPE html>
+     <html lang='ua'>
+     <head>
+       <meta charset='UTF-8'>
+       <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+       <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+       <title>Замовлення прийнято</title>
+       <link rel='stylesheet' href='/css/style.css'>
+       <link rel='preconnect' href='https://fonts.gstatic.com'>
+       <link href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap' rel='stylesheet'>
+     </head>
+     <body>
        <div class='wrapper'>
-       <div class='black-block'>
-       <div class='block-content'>
-         <div class='block-content-title'>
-           <strong class='text-header'>Замовлення прийнято</strong>
-         </div>
-         <div class='paragraph'>
-           Деталі: <br>
-           {$body}
-         </div>
-       </div>
-       </div>
-       </div>
+         <header class='header' id='header'>
+           <div class='container'>
+             <div class='header__logo'>
+               <a href='/'>Brand Name</a>
+             </div>
+             <div class='header-nav'>
+               <nav class='navigation'>
+                 <ul class='nav'>
+                   <li class='nav__item'><a href='/#how-to'>Як поклеїти?</a></li>
+                   <li class='nav__item'><a href='/#'>Інструкція</a></li>
+                   <li class='nav__item'><a href='/#'>Доставка</a></li>
+                   <li class='nav__item'><a href='/#'>Каталог</a></li>
+                   <li class='nav__item'><a href='/#'>Замовити</a></li>
+                   <li class='nav__item social-links'>
+                     <div class='links__item'>
+                       <a href='#'>
+                         <img src='assets/icons/instagram.svg' alt=''>
+                       </a>
+                     </div>
+                     <div class='links__item'>
+                       <a href='#'>
+                         <img src='assets/icons/prom.png' alt=''>
+                       </a>
+                     </div>
+                   </li>
+                 </ul>
+                 <div class='close-burger'>
+                 </div>
+               </nav>
+               <div class='cart-icon'>
+                 <div class='cart-icon__count'></div>
+                 <a><img src='assets/icons/cart.svg' alt=''></a>
+               </div>
+               <div class='burger'>
+                 <span class='burger__span'></span>
+               </div>
+             </div>
+           </div>
+         </header>
+         <main class='main'>
+           <section class='order-page'>
+             <div class='container'>
+               <div class='content'>
+                  <h6 class='main-header'>Замовлення прийнято</h6>
+                  <div class='sub-header'>Наш менеджер зв’яжеться з вами у найближчий час, щоб уточнити замовлення</div>
+                  <div class='order-details'>
+                    <div>
+                      <label class='order-details__label'>Ім’я:</label>
+                      <p class='order-details__text'>{$name}</p>
+                    </div>
+                    <div>
+                      <label class='order-details__label'>Номер телефону:</label>
+                      <p class='order-details__text'>{$phone}</p>
+                    </div>
+                  </div>
+                  <div class='items-in-cart'>
+                    {$test}
+                  </div>
+                  <div class='total-price'>
+                    <p>До оплати: {$total}грн.</p>
+                  </div>
+                </div>
+                <a href='/' class='btn--transparent btn--black-text btn btn--primary btn--center btn-a'>На головну</a>
+              </div>
+            </section>
+          </main>
+        </div>
+      </body>
        ";
    }
  }
 else {
-   http_response_code(400);
-   echo "<h1>400 BAD REQUEST ERROR</h1>";
+  http_response_code(400);
+  echo "<h1>400 BAD REQUEST ERROR</h1>";
 }
-$_POST['total'] = "";
-$_POST['name'] = "";
-$_POST['phone'] = "";
+for ($i = 1; $i <= 4; $i++) {
+  unset($_COOKIE['item-'.$i]);
+}
 
 
 ?>
   <script type='text/javascript'>
    localStorage.clear();
-   for (var i = 1; i <= 4; ++i) {
-     var itemInCart = localStorage.getItem(`item-${i}`)
-     var tempExp = 'Wed, 31 Oct 2012 08:50:17 GMT';
-     document.cookie = `item-${i}=${itemInCart};expires = ${tempExp}`
-     console.log(itemInCart);
-   }
   </script>
  </body>
 </html>
