@@ -11,7 +11,6 @@ function ready() {
   var removeCartItemButtons = document.getElementsByClassName('cart-item__remove')
     for (var i = 0; i < removeCartItemButtons.length; i++) {
       var button = removeCartItemButtons[i]
-      //button.addEventListener('click', removeCartItem)
       button.addEventListener('click', removeCartItem)
   }
   var quantityInputs = document.getElementsByClassName('quantity')
@@ -19,12 +18,11 @@ function ready() {
         var input = quantityInputs[i]
         input.addEventListener('change', quantityChanged)
   }
-  document.getElementsByClassName('cart-icon')[0].addEventListener('click', logCart)
 }
-
-function logCart(){
+// DEBUG:
+/*function logCart(){
   console.log(getDataBase());
-}
+}*/
 
 function cartIsEmpty(){
   var cart = document.getElementsByClassName('cart-items')[0]
@@ -75,7 +73,6 @@ function removeCartItem() {
   let db = getDataBase()
   delete db[item]
   localStorage.setItem("cart", JSON.stringify(db))
-  //updateCartTotal()
   updateCartTotal()
   cartIsEmpty()
 }
@@ -87,12 +84,10 @@ function updateDataBase(item, quantity) {
   localStorage.setItem('cart', db)
 }
 
-
 function addItemToCart(item, title, img, price, count) {
   var cartRow = document.createElement('div')
   cartRow.classList.add(`cart-item`)
   cartRow.classList.add(`${item}`)
-  //cartRow.setAttribute("data", `${item}`)
   cartRow.dataset.item = item
   var cartItems = document.getElementsByClassName('cart-items')[0]
   var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
@@ -132,7 +127,6 @@ function updateCartTotal() {
     var price = parseFloat(priceElement.innerText.replace('грн', ''))
     var quantity = quantityElement.value
     var item = cartItemContainer.getElementsByClassName('cart-item')[i].dataset.item
-    //updateDataBase(item, quantity)
     updateDataBase(item, quantity)
     totalItems = parseFloat(quantity) + totalItems
     localStorage.setItem("totalCount", totalItems)
@@ -159,7 +153,6 @@ function order() {
       let cart = JSON.parse(localStorage.getItem("cart"))
       var itemInCart = cart[`item${i}`]
       itemInCart = JSON.stringify(itemInCart)
-      console.log(itemInCart);
       var tempExp = 'Wed, 31 Oct 2012 08:50:17 GMT';
       if (itemInCart !== null) {
         document.cookie = `item-${i}=${itemInCart}`
