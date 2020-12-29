@@ -27,7 +27,7 @@ $phone = $_POST['phone'];
 
 $body = "<br>Info: <br>{$_COOKIE['item-1']} <br> {$_COOKIE['item-2']} <br> {$_COOKIE['item-3']} <br> {$_COOKIE['item-4']} <br> Total Price: {$total} <br> Ім’я {$name} <br>Номер тел. {$phone}";
 
-$email = 'gidrogellutsk@gmail.com';//фильтруем
+$email = 'saneq148619@gmail.com';//фильтруем
     $mail = new PHPMailer();
     $mail->IsSMTP();
     $mail->Host       = "smtp.gmail.com";
@@ -40,13 +40,15 @@ $email = 'gidrogellutsk@gmail.com';//фильтруем
     $mail->Encoding    = '8bit';
     $mail->Subject     = "Тест php mailer";
     $mail->ContentType = "text/html; charset=utf-8\r\n";
-    $mail->Username   = "gidrogellutsk@gmail.com";
-    $mail->Password   = "180699112870Cs";
+    $mail->Username   = "saneq148619@gmail.com";
+    $mail->Password   = "qhebofntlurqnedr";
+    $mail->setFrom('saneq148619@gmail.com');
     $mail->isHTML(true);
     $mail->Body = $body;
     $mail->WordWrap = 50;
     $mail->AddAddress($email);
-    //$mail->AddAddress('Begezaaaa@gmail.com');
+    $mail->AddAddress('Begezaaaa@gmail.com');
+    $mail->AddAddress('saneq148619@gmail.com');
     //if($_COOKIE['item-1'] === NULL){
     //  echo "<script>alert('123')</script>";
     //}
@@ -63,6 +65,8 @@ if ($total > 0 & $name !== "" & $phone !== "") {
        <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
        <meta http-equiv='X-UA-Compatible' content='ie=edge'>
        <title>Замовлення прийнято</title>
+       <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+       <link rel='icon' href='/favicon.ico' type='image/x-icon'>
        <link rel='stylesheet' href='/css/style.css'>
        <link rel='preconnect' href='https://fonts.gstatic.com'>
        <link href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap' rel='stylesheet'>

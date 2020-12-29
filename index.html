@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HWNL0XPD5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0HWNL0XPD5');
+  </script>
+  <script type="text/javascript" src="/js/loader.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" type="text/css" href="/js/slick/slick.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
   <script type="text/javascript" src="/js/cart.js" async></script>
-  <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function(event) {
-        var loader = document.getElementById('cube-loader');
-        loader.classList.add('hide-loader');
-        setTimeout(() => loader.style.display = "none", 450);
-        document.getElementsByClassName('scroll-lock')[0].classList.remove('scroll-lock')
-    })
-  </script>
 </head>
-<body class="scroll-lock">
-  <div id="cube-loader">
+<body class="loading">
+  <div id="cube-loader" class="page-loader">
     <div class="caption">
       <div class="cube-loader">
         <div class="cube loader-1"></div>
@@ -32,18 +35,29 @@
     </div>
   </div>
   <div class="wrapper">
-    <section class="promo-section">
+    <section class="promo-section promo">
         <div class="container">
-          <div class="promo__text">
+          <div class="promo__header">
             <h1><span class="highlited-text">Гідрогелева</span> плівка</h1>
             <h2>Захистить твій смартфон від подряпин, ударів, води, падінь та інших екстримальних ситуацій</h2>
           </div>
           <div class="promo__image">
             <img src="assets/img/header-image.png" alt="">
           </div>
-          <div class="promo__buttons">
-            <a href="#buy" class="btn--highlited btn btn--primary btn-a to-animate animate-right">Обери свою</a>
-            <a href="#bonus" class="btn--transparent btn--primary btn-a to-animate animate-right">Отримати бонуси</a>
+          <div class="promo__info">
+            <div class="promo-counter">
+              <div class="promo-counter__days">00</div>
+              <span class="promo-counter__colon">:</span>
+              <div class="promo-counter__hours">00</div>
+              <span class="promo-counter__colon">:</span>
+              <div class="promo-counter__minutes">00</div>
+              <span class="promo-counter__colon">:</span>
+              <div class="promo-counter__seconds">00</div>
+            </div>
+            <div class="promo__buttons">
+              <a href="#buy" class="btn--highlited btn btn--primary btn-a to-animate animate-right">Обери свою</a>
+              <a href="#bonus" class="btn--transparent btn--primary btn-a to-animate animate-right">Отримати бонуси</a>
+            </div>
           </div>
       </div>
     </section>
@@ -92,7 +106,7 @@
       <div class="container">
         <div class="content">
           <h1 class="main-header to-animate animate-right">Дивись <span class="highlited-text">краш-тест</span></h1>
-          <div class="splash to-animate animate-zoom">
+          <div class="splash to-animate animate-zoom video-1">
             <img src="/assets/img/splash.png" alt="">
             <span class="video-btn"></span>
           </div>
@@ -161,7 +175,7 @@
         <div class="content">
           <h1 class="main-header to-animate animate-right"><span class="highlited-text">Як поклеїти</span> гідрогельову плівку на смартфон?</h1>
           <p class="sub-header  to-animate animate-left">Гідрогелеву плівку клеїти простіше, ніж скло. Щоб зробити все швидко і якісно, ​​варто дотримуватися цієї інструкції:</p>
-          <div class="splash to-animate animate-zoom">
+          <div class="splash to-animate animate-zoom video-2">
             <img src="/assets/img/splash.png" alt="">
             <span class="video-btn"></span>
           </div>
@@ -320,7 +334,6 @@
       </div>
     </section>
     <section class="section-delivery section--black" id="delivery">
-      <div class="section__darken">
       <div class="container">
           <div class="content">
             <h1 class="main-header main-header--space to-animate animate-left">Як ми працюємо?</h1>
@@ -348,7 +361,6 @@
               </div>
             </div>
           </div>
-        </div>
       </div>
     </section>
     <section id="faq">
@@ -364,7 +376,6 @@
       </div>
     </section>
     <section id="comments" class="section--comments section--black">
-      <div class="section__darken section__darken--60">
         <div class="container">
             <h1 class="main-header main-header--space">Відгуки покупців</h1>
             <div class="comments-wrapper">
@@ -396,7 +407,6 @@
                 </div>
             </article>
           </div>
-        </div>
       </div>
     </section>
     <section class="order--footer section--black" id="order--footer">
@@ -437,123 +447,23 @@
     </footer>
     <div class="popup animate__animated animate__faster animate__fadeOutDown">
       <div class="container">
-      <div class="popup-close"><span class="popup-close__span"></span></div>
-      <div class="content">
-        <div id="player"></div>
+        <div class="popup-close">
+          <span class="popup-close__span"></span>
+        </div>
+        <div class="content">
+          <div id="pop-up-player"></div>
+        </div>
       </div>
     </div>
-    </div>
   </div>
-  <script src="/js/libs.min.js"></script>
-  <script src="/js/main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="/js/slick/slick.min.js"></script>
+  <script type="text/javascript" src="/js/slick/slick.min.js"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('.comments-wrapper').slick({
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        dots: true,
-        infinite: true,
-        responsive: [
-          {
-            breakpoint: 960,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
-        ]
-      });
-    });
-  </script>
-  <script type="text/javascript">
-  var $win = $(window);
-  var $stat = $('.to-animate');
-  var $height =- $(window).height() + 150;
-  $win.on('scroll', function () {
-    var scrollTop = $win.scrollTop();
-    $stat.each(function () {
-      var $self = $(this);
-      var prev=$self.offset();
-      if ( (scrollTop - prev.top) > $height) {
-        if ($self.hasClass("animate-left"))
-          $self.css('opacity', '1').addClass('animate__animated animate__fadeInLeft');
-        if ($self.hasClass("animate-right"))
-          $self.css('opacity', '1').addClass('animate__animated animate__fadeInRight');
-        if ($self.hasClass("animate-zoom"))
-          $self.css('opacity', '1').addClass('animate__animated animate__zoomIn');
-        if ($self.hasClass("animate-bottom"))
-          $self.css('opacity', '1').addClass('animate__animated animate__fadeInDown');
-      }
-    });
-  }).scroll();
-  </script>
-  <script type="text/javascript">
-    window.onscroll = function() {myFunction()};
-    var header = document.getElementById("header");
-    var sticky = header.offsetTop;
-    function myFunction() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-      }
-      else {
-        header.classList.remove("sticky");
-      }
-    }
-  </script>
-  <script type="text/javascript">
-    var burger = document.querySelector(".burger");
-    var nav = document.querySelector(".navigation");
-    var body = document.querySelector("body");
-    burger.onclick = function () {
-      burger.classList.toggle('burger--open');
-      nav.classList.toggle('navigation--open');
-      body.classList.toggle('scroll-lock');
-    }
-  </script>
-  <script>
-      var tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          videoId: 'nbp3Ra3Yp74'
-        });
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
-  </script>
-  <script type="text/javascript">
-    var popup = document.querySelector(".popup");
-    var splash = document.querySelector(".splash");
-    var popupClose = document.querySelector(".popup-close");
-    var body = document.querySelector("body");
-    splash.onclick = function () {
-      popup.classList.toggle('animate__fadeInUp');
-      popup.classList.toggle('animate__fadeOutDown');
-      body.classList.toggle('scroll-lock');
-    }
-    popupClose.onclick = function () {
-      popup.classList.toggle('animate__fadeOutDown');
-      popup.classList.toggle('animate__fadeInUp');
-      body.classList.toggle('scroll-lock');
-      try {
-        stopVideo();
-      } catch (e) {
-
-      } finally {
-
-      }
-
-    }
-  </script>
-
+  <script type="text/javascript" src="/js/slider.js"></script>
+  <script type="text/javascript" src="/js/animations.js"></script>
+  <script type="text/javascript" src="/js/header.js"></script>
+  <script type="text/javascript" src="/js/burger.js"></script>
+  <script type="text/javascript" src="/js/popup.js"></script>
+  <script type="text/javascript" src="/js/countdown.js"></script>
 </body>
 </html>

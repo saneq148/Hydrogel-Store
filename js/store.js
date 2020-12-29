@@ -23,7 +23,7 @@ function ready() {
 }
 
 function logCart(){
-  console.log(JSON.parse(localStorage.getItem('cart')));
+  console.log(getDataBase());
 }
 
 function cartIsEmpty(){
@@ -35,7 +35,7 @@ function cartIsEmpty(){
     total.innerHTML = ""
     btn.innerHTML = ""
     if (localStorage.getItem("cart") !== null) {
-      cart = JSON.parse(localStorage.getItem("cart"))
+      cart = getDataBase()
 
       if (cart['totalCount'] === 0) {
         delete cart['totalCount']
@@ -49,7 +49,7 @@ function cartIsEmpty(){
 function loadCartItems() {
   let cart = new Object
   if (localStorage.getItem("cart") !== null) {
-    cart = JSON.parse(localStorage.getItem("cart"))
+    cart = getDataBase()
     for (var i = 1; i <= 4; i++) {
       if (cart[`item${i}`] !== undefined) {
         let cartItem = cart[`item${i}`]
@@ -72,7 +72,7 @@ function removeCartItem() {
   localStorage.removeItem(buttonClicked.parentElement.parentElement.dataset.item)
   buttonClicked.parentElement.parentElement.remove()
   item = buttonClicked.parentElement.parentElement.dataset.item
-  let db = JSON.parse(localStorage.getItem("cart"))
+  let db = getDataBase()
   delete db[item]
   localStorage.setItem("cart", JSON.stringify(db))
   //updateCartTotal()
@@ -81,7 +81,7 @@ function removeCartItem() {
 }
 
 function updateDataBase(item, quantity) {
-  let db = JSON.parse(localStorage.getItem("cart"))
+  let db = getDataBase()
   db[item].count = parseFloat(quantity)
   db = JSON.stringify(db)
   localStorage.setItem('cart', db)
@@ -141,7 +141,7 @@ function updateCartTotal() {
   total = Math.round(total * 100) / 100
   document.getElementsByClassName('cart__price')[0].innerText = total + "грн"
   if (localStorage.getItem("cart") !== null) {
-    let db = JSON.parse(localStorage.getItem("cart"))
+    let db = getDataBase()
     db.totalCount = totalItems
     db = JSON.stringify(db)
     localStorage.setItem("cart", db)
@@ -149,7 +149,9 @@ function updateCartTotal() {
   document.cookie = `totalPrice=${total}`
 }
 
-
+function getDataBase() {
+  return JSON.parse(localStorage.getItem("cart"))
+}
 
 function order() {
   if (document.getElementsByClassName('cart-total')[0].innerHTML !== "") {

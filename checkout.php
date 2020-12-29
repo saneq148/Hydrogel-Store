@@ -1,20 +1,5 @@
 <?php
-
-var_dump ($_COOKIE["item-1"]);
-echo "<br>";
-var_dump ($_COOKIE["item-2"]);
-echo "<br>";
-var_dump ($_COOKIE["item-3"]);
-echo "<br>";
-var_dump ($_COOKIE["item-4"]);
-echo "<br><a href=cart.html>Cart</a><br><a href=index.html>Home</a><br><a href=clear.php>Clear</a>";
-echo '<script>console.log(localStorage.getItem(`item-1`))</script>';
-echo '<script>console.log(localStorage.getItem(`item-2`))</script>';
-echo '<script>console.log(localStorage.getItem(`item-3`))</script>';
-echo '<script>console.log(localStorage.getItem(`item-4`))</script>';
-$item =  json_decode($_COOKIE["item-4"]);
 $total =  $_COOKIE["totalPrice"];
-echo $total;
  ?>
  <!DOCTYPE html>
  <html lang="ua">
@@ -23,6 +8,8 @@ echo $total;
    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Order</title>
+   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+   <link rel="icon" href="/favicon.ico" type="image/x-icon">
    <link rel="stylesheet" href="/css/style.css">
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">

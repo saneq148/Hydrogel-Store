@@ -4,6 +4,9 @@
   height: 100%;
   width: 100%;
   position: fixed;
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity .2s linear;
   & .caption {
     margin: 0 auto;
   }
@@ -54,8 +57,15 @@
     }
   }
 }
-.hide-loader {
-  animation: loaderFadeOut .5s forwards;
+.loaded #cube-loader {
+  display: none;
+}
+.loading #cube-loader {
+  opacity: 1;
+  z-index: 10;
+}
+.loading {
+  overflow: hidden;
 }
 
 @keyframes cube-loader {
@@ -82,8 +92,4 @@
   100% {
     display: none;
   }
-}
-#cube-loader {
-  background-color: white;
-  z-index: 7;
 }

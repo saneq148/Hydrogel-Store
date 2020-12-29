@@ -7,44 +7,9 @@ function ready() {
   let addToCartButtons = document.getElementsByClassName('btn--buy');
   for (let i = 0; i < addToCartButtons.length; ++i) {
         let button = addToCartButtons[i];
-        button.addEventListener('click', testAddToCartClicked);
+        button.addEventListener('click', addToCartClicked);
   }
   getTotalCount()
-}
-
-function addToCartClicked(event) {
-  let button = event.target
-  let shopItem = button.parentElement.parentElement
-  let item = shopItem.getElementsByClassName('order-name')[0].dataset.item
-  let title = shopItem.getElementsByClassName('order-name')[0].innerText
-  let price = shopItem.getElementsByClassName('price__current')[0].innerText
-  let img = shopItem.getElementsByClassName('buy__item-img')[0].children[0].src
-  //document.cookie = `${title} = 1; max-age=3600`
-  let totalCount
-  if (isNaN(totalCount)) {
-    totalcount = 0;
-  }
-  totalCount = localStorage.getItem("totalCount")
-  totalCount++
-  let localCount
-  try {
-    localCount = JSON.parse(localStorage.getItem(item)).count
-  }
-  catch (e) {
-    localCount = 0
-  }
-  localCount++
-  localStorage.setItem(`${item}`, `{
-    "title":"${title}",
-    "price":"${price}",
-    "img":"${img}",
-    "count":"${localCount}"
-  }`);
-  localStorage.setItem("totalCount", totalCount)
-  let str = JSON.parse(localStorage.getItem(item))
-  //updateCartIcon()
-  //console.log(JSON.parse(localStorage.getItem("item-4")));
-
 }
 
 function updateCartIcon(totalCount) {
@@ -54,7 +19,7 @@ function updateCartIcon(totalCount) {
   cartIcon.children[0].innerText = totalCount
 }
 
-function testAddToCartClicked(event) {
+function addToCartClicked(event) {
   let cart = new Object
   let cartItem = new Object
   const button = event.target
@@ -71,7 +36,8 @@ function testAddToCartClicked(event) {
   try {
     itemCount = cart[item].count
   }
-  catch {
+  catch(e) {
+    console.log(e);
     itemCount = 0
   }
   if (cart["totalCount"] !== undefined)
@@ -90,8 +56,7 @@ function testAddToCartClicked(event) {
   getTotalCount()
 }
 function getTotalCount() {
-  let totalCount = JSON.parse(localStorage.getItem("cart")).totalCount
-  if (totalCount !== undefined) {
-    updateCartIcon(totalCount)
+  if (localStorage.getItem("cart") !== null) {
+    updateCartIcon(JSON.parse(localStorage.getItem("cart")).totalCount)
   }
 }
