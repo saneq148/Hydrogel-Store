@@ -10,3 +10,8 @@ function stickHeader() {
     header.classList.remove("sticky");
   }
 }
+window.addEventListener('resize', () => {
+  header.classList.remove("sticky");
+  sticky = header.offsetTop;
+  stickHeader();
+});

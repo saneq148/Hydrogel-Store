@@ -83,7 +83,7 @@ $total =  $_COOKIE["totalPrice"];
                  echo "<div class='total-price'><p>Загальна вартість: <span>$total грн.</span></p></div>";
                  ?>
                </div>
-               <form action="/order.php" method="post" class="form order-form">
+               <form action="/order" method="post" class="form order-form">
                  <input type="text" name="total" value="<?=$total?>" style="display: none">
                  <label for="order-name" class="check-form__label">Ваше ім’я:</label>
                  <input class="input" type="text" name="name" id="order-name" value="" placeholder="Наприклад, Володимир" required>

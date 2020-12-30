@@ -47,7 +47,7 @@ $email = 'saneq148619@gmail.com';//фильтруем
     $mail->Body = $body;
     $mail->WordWrap = 50;
     $mail->AddAddress($email);
-    $mail->AddAddress('Begezaaaa@gmail.com');
+    //$mail->AddAddress('Begezaaaa@gmail.com');
     $mail->AddAddress('saneq148619@gmail.com');
     //if($_COOKIE['item-1'] === NULL){
     //  echo "<script>alert('123')</script>";

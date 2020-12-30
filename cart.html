@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="/js/store.js" async></script>
+  <script type="text/javascript" src="/js/cart.js" async></script>
 </head>
 <body>
   <div class="wrapper">
@@ -65,14 +65,5 @@
       </section>
     </main>
   </div>
-  <script type="text/javascript">
-    var burger = document.querySelector(".burger");
-    var nav = document.querySelector(".navigation");
-    var body = document.querySelector("body");
-    burger.onclick = function () {
-      burger.classList.toggle('burger--open');
-      nav.classList.toggle('navigation--open');
-      body.classList.toggle('scroll-lock');
-    }
-  </script>
+  <script type="text/javascript" src="/js/burger.js"></script>
 </body>

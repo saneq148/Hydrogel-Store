@@ -8,7 +8,6 @@
   &.sticky {
     position: fixed;
     background-color: rgb(240, 240, 240);
-    //backdrop-filter: blur(8px);
   }
   .container {
     display: flex;
@@ -29,6 +28,7 @@
 .header-nav {
   display: flex;
   align-items: center;
+  color: $primary;
 }
 .burger {
   margin-left: 2rem;

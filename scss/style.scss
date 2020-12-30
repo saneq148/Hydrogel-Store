@@ -85,6 +85,9 @@ body {
   font-weight: normal;
   text-align: center;
   padding-bottom: 2rem;
+  @include breakpoint($tabled-bp) {
+    font-size: 2rem;
+  }
 }
 .header-image {
   max-width: 100%;
