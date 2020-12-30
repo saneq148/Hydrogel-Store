@@ -9,7 +9,7 @@ for ($i=1; $i <= 4; $i++) {
     $test = '
     <div class="item-in-cart">
       <div class="item-in-cart__img">
-        <img src='.$cookie->{"img"}.' alt="">
+        <img src='.$cookie->{"img"}.' width="50" height="50" alt="">
       </div>
       <div class="item-in-cart__title">
         <p>'.$cookie->{"title"}.'</p>
@@ -25,7 +25,7 @@ $total = $_POST['total'];
 $name = $_POST['name'];
 $phone = $_POST['phone'];
 
-$body = "<br>Info: <br>{$_COOKIE['item-1']} <br> {$_COOKIE['item-2']} <br> {$_COOKIE['item-3']} <br> {$_COOKIE['item-4']} <br> Total Price: {$total} <br> Ім’я {$name} <br>Номер тел. {$phone}";
+$body = "<br>Info: <br>{$test}<br> Загальна вартість: {$total} <br> Ім’я: {$name} <br>Тел.: {$phone}";
 
 $email = 'saneq148619@gmail.com';//фильтруем
     $mail = new PHPMailer();

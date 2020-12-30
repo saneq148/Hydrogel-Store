@@ -7,6 +7,7 @@ $(document).ready(function(){
     autoplaySpeed: 2000,
     dots: true,
     infinite: true,
+    adaptiveHeight: true,
     responsive: [
       {
         breakpoint: 960,
