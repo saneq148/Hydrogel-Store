@@ -28,17 +28,35 @@
 .btn--buy {
   width: 100%;
   background-color: black;
+  transition: all .3s ease-in-out;
   color: white;
+  font-weight: 800;
   height: 6rem;
   font-size: 1.6rem;
-  margin: 1.5rem auto;
+  margin: 1.5rem auto 0;
   border: none;
   @include breakpoint($pc-bp) {
     &:hover {
       background-color: transparent;
       border: 1px solid black;
       color: black;
-      font-weight: bold;
+    }
+  }
+}
+.btn--buy-cart {
+  width: 100%;
+  background-color: #fff;
+  color: black;
+  height: 6rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  border: 1px solid black;
+  margin: 1.5rem auto 0;
+  transition: all .2s ease-in-out;
+  @include breakpoint($pc-bp) {
+    &:hover {
+      color: white;
+      background-color: #000;
     }
   }
 }

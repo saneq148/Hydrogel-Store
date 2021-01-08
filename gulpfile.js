@@ -52,7 +52,7 @@ function styles () {
 // Static Server + watching scss/html files
 function serve () {
   browserSync.init({
-    proxy: 'http://store/',
+    proxy: 'http://githydrogel/',
   });
 
   watch()

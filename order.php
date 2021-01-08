@@ -145,8 +145,8 @@ if ($total > 0 & $name !== "" & $phone !== "") {
    }
  }
 else {
-  http_response_code(400);
-  echo "<h1>400 BAD REQUEST ERROR</h1>";
+  //http_response_code(400);
+  header("HTTP/1.0 404 Not Found");
 }
 for ($i = 1; $i <= 4; $i++) {
   unset($_COOKIE['item-'.$i]);

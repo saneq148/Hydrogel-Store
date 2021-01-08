@@ -1,96 +1,47 @@
 if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready)
+  document.addEventListener('DOMContentLoaded', ready);
 }
 else {
-  ready()
+  ready();
 }
 
 function ready() {
-  loadCartItems()
-  cartIsEmpty()
-  var removeCartItemButtons = document.getElementsByClassName('cart-item__remove')
-    for (var i = 0; i < removeCartItemButtons.length; i++) {
-      var button = removeCartItemButtons[i]
-      button.addEventListener('click', removeCartItem)
+  loadCartItems();
+  var removeCartItemButtons = document.getElementsByClassName('cart-item__remove');
+  for (var i = 0; i < removeCartItemButtons.length; i++) {
+    var button = removeCartItemButtons[i];
+    button.addEventListener('click', removeCartItem);
   }
-  var quantityInputs = document.getElementsByClassName('quantity')
-    for (var i = 0; i < quantityInputs.length; i++) {
-        var input = quantityInputs[i]
-        input.addEventListener('change', quantityChanged)
-  }
-}
-// DEBUG:
-/*function logCart(){
-  console.log(getDataBase());
-}*/
-
-function cartIsEmpty(){
-  var cart = document.getElementsByClassName('cart-items')[0]
-  var total = document.getElementsByClassName('cart-total')[0]
-  var btn = document.getElementsByClassName('cart-order-btn')[0]
-  if (cart.innerHTML === "") {
-    cart.innerHTML = "<div class='cart-is-empty'>Ваша корзина пуста</div>"
-    total.innerHTML = ""
-    btn.innerHTML = ""
-    if (localStorage.getItem("cart") !== null) {
-      cart = getDataBase()
-
-      if (cart['totalCount'] === 0) {
-        delete cart['totalCount']
-        console.log(cart['totalCount']);
-        localStorage.removeItem('cart')
-      }
-    }
+  var quantityInputs = document.getElementsByClassName('quantity');
+  for (var i = 0; i < quantityInputs.length; i++) {
+    var input = quantityInputs[i];
+    input.addEventListener('change', quantityChanged);
   }
 }
 
 function loadCartItems() {
-  let cart = new Object
+  let cart = new Array;
   if (localStorage.getItem("cart") !== null) {
-    cart = getDataBase()
-    for (var i = 1; i <= 4; i++) {
-      if (cart[`item${i}`] !== undefined) {
-        let cartItem = cart[`item${i}`]
-        let title = cartItem.title
-        let img = cartItem.img
-        let price = cartItem.price
-        let count = cartItem.count
-        addItemToCart(`item${i}`, title, img, price, count)
-      }
-    }
-    updateCartTotal()
+    cart = JSON.parse(localStorage.getItem("cart"));
+    cart.forEach(element => {
+      let item = element.item;
+      let title = element.title;
+      let img = element.img;
+      let price = element.price;
+      let count = element.count;
+      addItemToCart(item, title, img, price, count);
+    })
   }
-  else {
-    cartIsEmpty()
-  }
-}
-
-function removeCartItem() {
-  var buttonClicked = event.target
-  localStorage.removeItem(buttonClicked.parentElement.parentElement.dataset.item)
-  buttonClicked.parentElement.parentElement.remove()
-  item = buttonClicked.parentElement.parentElement.dataset.item
-  let db = getDataBase()
-  delete db[item]
-  localStorage.setItem("cart", JSON.stringify(db))
-  updateCartTotal()
-  cartIsEmpty()
-}
-
-function updateDataBase(item, quantity) {
-  let db = getDataBase()
-  db[item].count = parseFloat(quantity)
-  db = JSON.stringify(db)
-  localStorage.setItem('cart', db)
+  updateCartTotal();
 }
 
 function addItemToCart(item, title, img, price, count) {
-  var cartRow = document.createElement('div')
-  cartRow.classList.add(`cart-item`)
-  cartRow.classList.add(`${item}`)
-  cartRow.dataset.item = item
-  var cartItems = document.getElementsByClassName('cart-items')[0]
-  var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+  var cartRow = document.createElement('div');
+  cartRow.classList.add(`cart-item`);
+  cartRow.classList.add(`${item}`);
+  cartRow.dataset.item = item;
+  var cartItems = document.getElementsByClassName('cart-items')[0];
+  var cartItemNames = cartItems.getElementsByClassName('cart-item-title');
   var cartRowContents = `
     <img class="cart-item__img" src="${img}" alt="">
     <p class="cart-item__name">${title}</p>
@@ -102,68 +53,85 @@ function addItemToCart(item, title, img, price, count) {
       </div>
       <p class="cart-item__price">${price}</p>
       <div class="cart-item__remove"></div>
-    </div>`
-  cartRow.innerHTML = cartRowContents
-  cartItems.append(cartRow)
-}
-
-function quantityChanged(event) {
-  var input = event.target
-  if (isNaN(input.value) || input.value <= 0) {
-    input.value = 1
-  }
-  updateCartTotal()
+    </div>`;
+  cartRow.innerHTML = cartRowContents;
+  cartItems.append(cartRow);
 }
 
 function updateCartTotal() {
-  var cartItemContainer = document.getElementsByClassName('cart')[0]
-  var cartRows = cartItemContainer.getElementsByClassName('cart-item')
-  var total = 0
-  var totalItems = 0
+  let cartItemContainer = document.getElementsByClassName('cart')[0];
+  let cartRows = cartItemContainer.getElementsByClassName('cart-item');
+  let total = 0;
+  let totalItems = 0;
   for (var i = 0; i < cartRows.length; i++) {
-    var cartRow = cartRows[i]
-    var priceElement = cartRow.getElementsByClassName('cart-item__price')[0]
-    var quantityElement = cartRow.getElementsByClassName('quantity')[0]
-    var price = parseFloat(priceElement.innerText.replace('грн', ''))
-    var quantity = quantityElement.value
-    var item = cartItemContainer.getElementsByClassName('cart-item')[i].dataset.item
-    updateDataBase(item, quantity)
-    totalItems = parseFloat(quantity) + totalItems
-    localStorage.setItem("totalCount", totalItems)
-    total = total + (price * quantity)
+    let cartRow = cartRows[i];
+    let priceElement = cartRow.getElementsByClassName('cart-item__price')[0];
+    let quantityElement = cartRow.getElementsByClassName('quantity')[0];
+    let price = parseFloat(priceElement.innerText.replace('грн', ''));
+    let quantity = quantityElement.value;
+    let item = cartItemContainer.getElementsByClassName('cart-item')[i].dataset.item;
+    updateDataBase(item, quantity);
+    totalItems = parseFloat(quantity) + totalItems;
+    total = total + (price * quantity);
   }
-  total = Math.round(total * 100) / 100
-  document.getElementsByClassName('cart__price')[0].innerText = total + "грн"
-  if (localStorage.getItem("cart") !== null) {
-    let db = getDataBase()
-    db.totalCount = totalItems
-    db = JSON.stringify(db)
-    localStorage.setItem("cart", db)
+  total = Math.round(total * 100) / 100;
+  document.getElementsByClassName('cart__price')[0].innerText = total + "грн";
+  cartIsEmpty();
+}
+
+function removeCartItem() {
+  let buttonClicked = event.target;
+  let htmlCartItem = buttonClicked.parentElement.parentElement;
+  let cart = getDataBase();
+  let itemToDeleteIndex = cart.findIndex(element => element.item === htmlCartItem.dataset.item);
+  cart.splice(itemToDeleteIndex, 1);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  htmlCartItem.remove();
+  updateCartTotal();
+}
+
+function quantityChanged(event) {
+  let input = event.target;
+  if (isNaN(input.value) || input.value <= 0) {
+    input.value = 1;
   }
-  document.cookie = `totalPrice=${total}`
+  updateCartTotal();
+}
+
+function updateDataBase(item, quantity) {
+  let cart = getDataBase();
+  let itemToChangeIndex = cart.findIndex(element => element.item === item);
+  cart[itemToChangeIndex].count = parseFloat(quantity);
+  cart = JSON.stringify(cart);
+  localStorage.setItem('cart', cart);
 }
 
 function getDataBase() {
-  return JSON.parse(localStorage.getItem("cart"))
+  return JSON.parse(localStorage.getItem("cart"));
+}
+
+function cartIsEmpty(){
+  let cart = document.getElementsByClassName('cart-items')[0];
+  let total = document.getElementsByClassName('cart-total')[0];
+  let btn = document.getElementsByClassName('cart-order-btn')[0];
+  if (cart.innerHTML === "") {
+    cart.innerHTML = "<div class='cart-is-empty'>Ваша корзина пуста</div>";
+    total.innerHTML = "";
+    //btn.innerHTML = "";
+    if (localStorage.getItem("cart") !== null) {
+      if (JSON.parse(localStorage.getItem("cart")).length == 0) {
+        localStorage.removeItem('cart');
+      }
+    }
+  }
 }
 
 function order() {
-  if (document.getElementsByClassName('cart-total')[0].innerHTML !== "") {
-    for (var i = 1; i <= 4; ++i) {
-      let cart = JSON.parse(localStorage.getItem("cart"))
-      var itemInCart = cart[`item${i}`]
-      itemInCart = JSON.stringify(itemInCart)
-      var tempExp = 'Wed, 31 Oct 2012 08:50:17 GMT';
-      if (itemInCart !== null) {
-        document.cookie = `item-${i}=${itemInCart}`
-      }
-      else {
-        document.cookie = `item-${i}=${itemInCart};expires = ${tempExp}`
-      }
-    }
+  if (JSON.parse(localStorage.getItem('cart')).length > 0) {
+    document.cookie = `cart = ${localStorage.getItem('cart')}; max-age=${5 * 60}`;
     window.location.href = '/checkout';
   }
   else {
-    alert("Корзина пуста")
+    alert("Корзина пуста");
   }
 }

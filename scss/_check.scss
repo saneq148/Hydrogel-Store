@@ -12,15 +12,19 @@
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   font-size: 2.1rem;
+  box-shadow: 0 0 1px $primary;
+  transition: all 0.1s ease-in-out;
   &:focus {
     border: 2px solid $primary;
     box-shadow: 0 0 5px $primary;
   }
   &::placeholder {
     color: $grey-for-text;
+    transition: color .3s linear, font-size .2s linear;
   }
   &:focus::placeholder {
     color: transparent;
+    font-size: 1px;
   }
 }
 .check-form__label {

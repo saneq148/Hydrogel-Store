@@ -1,5 +1,5 @@
 <?php
-$total =  $_COOKIE["totalPrice"];
+  session_start();
  ?>
  <!DOCTYPE html>
  <html lang="ua">
@@ -62,26 +62,32 @@ $total =  $_COOKIE["totalPrice"];
                <div class="checkout">
                <h1 class="main-header">Зробити <span class="highlited-text">замовлення</span> онлайн</h1>
                <div class="items-in-cart">
-                 <?php
-                 for ($i=1; $i <= 4; $i++) {
-                   $cookie = json_decode($_COOKIE["item-".$i]);
-                   if ($cookie != NULL) {
-                     echo '
-                     <div class="item-in-cart">
-                       <div class="item-in-cart__img">
-                         <img src='.$cookie->{"img"}.' alt="">
-                       </div>
-                       <div class="item-in-cart__title">
-                         <p>'.$cookie->{"title"}.'</p>
-                       </div>
-                       <div class="item-in-cart__count">
-                         <p>Кількість: '.$cookie->{"count"}.'шт.</p>
-                       </div>
-                     </div>';
-                   }
-                 }
-                 echo "<div class='total-price'><p>Загальна вартість: <span>$total грн.</span></p></div>";
-                 ?>
+                <?php 
+                  $cart = json_decode($_COOKIE["cart"]);
+                  $totalCount = 0;
+                  if ($cart !== NULL) {
+                    foreach ($cart as &$value) {
+                      echo '
+                      <div class="item-in-cart">
+                        <div class="item-in-cart__img">
+                          <img src='.$value->{"img"}.' alt="">
+                        </div>
+                        <div class="item-in-cart__title">
+                          <p>'.$value->{"title"}.'</p>
+                        </div>
+                        <div class="item-in-cart__count">
+                          <p>Кількість: '.$value->{"count"}.'шт.</p>
+                        </div>
+                      </div>';
+                      $cost = $value->{"count"} * $value->{"price"};
+                      $totalCount = $totalCount + $cost;
+                    }
+                    echo "<div class='total-price'><p>Загальна вартість: <span>$totalCount грн.</span></p></div>";
+                  } 
+                  else {
+                    http_response_code(400);
+                  }
+                ?>
                </div>
                <form action="/order" method="post" class="form order-form">
                  <input type="text" name="total" value="<?=$total?>" style="display: none">
