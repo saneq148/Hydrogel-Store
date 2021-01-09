@@ -91,10 +91,23 @@
                </div>
                <form action="/order" method="post" class="form order-form">
                  <input type="text" name="total" value="<?=$total?>" style="display: none">
-                 <label for="order-name" class="check-form__label">Ваше ім’я:</label>
+                 <label for="order-name" class="check-form__label">Ваше ім’я<span class="input-required">*</span></label>
                  <input class="input" type="text" name="name" id="order-name" value="" placeholder="Наприклад, Володимир" required>
-                 <label for="order-phone" class="check-form__label">Ваш телефон:</label>
+                 <label for="order-phone" class="check-form__label">Ваш телефон<span class="input-required">*</span></label>
                  <input class="input" type="tel" name="phone" id="order-phone" value="" minlength="10" maxlength="20" placeholder="+380501032020" required>
+                 <label for="cityNP" class="check-form__label">Місто<span class="input-required">*</span></label>
+                 <input class="input" name="gorodNp" list="goroda" id="cityNP">
+                  <datalist id="goroda">
+                    <option value="Naples">
+                    <option value="London">
+                    <option value="Berlin">
+                    <option value="New York">
+                    <option value="Frattamaggiore">
+                  </datalist>
+                 <label for="information" class="check-form__label">Коментар до замовлення:</label>
+                 <textarea class="input input--textarea" name="info" id="information" minlength='0'></textarea>
+                 <label class="check-form__label"><span class="input-required">*</span> — обов’язково</label>
+                 <label class="check-form__label">Після замовлення з вами зв’яжеться менеджер, який уточнить модель, місто доставки та інші деталі</label>
                  <button type="submit" class="btn--highlited btn btn--primary">Замовити</button>
                </form>
              </div>

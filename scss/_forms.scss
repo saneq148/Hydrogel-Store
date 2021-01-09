@@ -1,0 +1,20 @@
+.input--textarea {
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+    background-color: $grey-for-background;
+    &:focus {
+        height: 400px;
+        background-color: #fff;
+    }
+    &:not([data-val=""]) {
+        background-color: red;
+    }
+}
+.input-required {
+    color: red;
+    font-size: 100%;
+    vertical-align: top;
+    padding: 0 1px;
+}
