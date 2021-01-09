@@ -1,6 +1,7 @@
 <?php
 require_once('class.phpmailer.php');
 require 'class.smtp.php';
+include 'vars.php';
 
 
 for ($i=1; $i <= 4; $i++) {
@@ -41,7 +42,7 @@ $email = 'saneq148619@gmail.com';//фильтруем
     $mail->Subject     = "Тест php mailer";
     $mail->ContentType = "text/html; charset=utf-8\r\n";
     $mail->Username   = "saneq148619@gmail.com";
-    $mail->Password   = "qhebofntlurqnedr";
+    $mail->Password   = $pass;
     $mail->setFrom('saneq148619@gmail.com');
     $mail->isHTML(true);
     $mail->Body = $body;
