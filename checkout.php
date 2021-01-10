@@ -95,9 +95,42 @@
                  <input class="input" type="text" name="name" id="order-name" value="" placeholder="Наприклад, Володимир" required>
                  <label for="order-phone" class="check-form__label">Ваш телефон<span class="input-required">*</span></label>
                  <input class="input" type="tel" name="phone" id="order-phone" value="" minlength="10" maxlength="20" placeholder="+380501032020" required>
+                 <label for="order-region" class="check-form__label">Область<span class="input-required">*</span></label>
+                 <select name="region" id="order-region" class="input input-select">
+                   <option value="none" selected disabled hidden>Виберіть</option>
+                   <option value="Вінницька">Вінницька</option>
+                   <option value="Волинська">Волинська</option>
+                   <option value="Дніпропетровська">Дніпропетровська</option>
+                   <option value="Донецька">Донецька</option>
+                   <option value="Житомирська">Житомирська</option>
+                   <option value="Закарпатська">Закарпатська</option>
+                   <option value="Запорізька">Запорізька</option>
+                   <option value="Івано-Франківська">Івано-Франківська</option>
+                   <option value="Київська">Київська</option>
+                   <option value="Кіровоградська">Кіровоградська</option>
+                   <option value="Луганська">Луганська</option>
+                   <option value="Львівська">Львівська</option>
+                   <option value="Миколаївська">Миколаївська</option>
+                   <option value="Одеська">Одеська</option>
+                   <option value="Полтавська">Полтавська</option>
+                   <option value="Рівненська">Рівненська</option>
+                   <option value="Сумська">Сумська</option>
+                   <option value="Тернопільська">Тернопільська</option>
+                   <option value="Харківська">Харківська</option>
+                   <option value="Херсонська">Херсонська</option>
+                   <option value="Хмельницька">Хмельницька</option>
+                   <option value="Черкаська">Черкаська</option>
+                   <option value="Чернігівська">Чернігівська</option>
+                   <option value="Чернівецька">Чернівецька</option>                   
+                 </select>
                  <label for="cityNP" class="check-form__label">Місто<span class="input-required">*</span></label>
-                 <input class="input city-input" name="gorodNp" list="goroda" id="cityNP" autocomplete="off">
+                 <input class="input city-input" name="gorodNp" list="goroda" id="cityNP" autocomplete="off" disabled>
                   <datalist id="goroda"></datalist>
+                 <label for="order-warehouse" class="check-form__label">Відділення<span class="input-required">*</span></label>
+                 <select name="warehouse" id="order-warehouse" class="input warehouse-input" disabled>
+                   <option value="1">1</option>
+                   <option value="1">2</option>
+                 </select>
                  <label for="information" class="check-form__label">Коментар до замовлення:</label>
                  <textarea class="input input--textarea" name="info" id="information" minlength='0'></textarea>
                  <label class="check-form__label"><span class="input-required">*</span> — обов’язково</label>

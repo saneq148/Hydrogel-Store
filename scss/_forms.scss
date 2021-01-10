@@ -18,3 +18,6 @@
     vertical-align: top;
     padding: 0 1px;
 }
+.input-select[value=''] {
+    background-color: black;
+}

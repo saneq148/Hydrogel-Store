@@ -1,6 +1,5 @@
 const fetchUsers = (event) => {
     axios.post('https://api.novaposhta.ua/v2.0/json/Address/searchSettlements/', {
-        "apiKey": "889910e37deb2da4113a7b0e2236333c",
         "modelName": "Address",
         "calledMethod": "searchSettlements",
         "methodProperties": {
@@ -14,23 +13,54 @@ const fetchUsers = (event) => {
     });
 };
 
+const getWarehouses = () => {
+    axios.post('https://api.novaposhta.ua/v2.0/json/Address/getWarehouses/', {
+        "modelName": "Address",
+        "calledMethod": "getWarehouses",
+        "methodProperties": {
+            "CityName": document.getElementById("order-warehouse").dataset.ref
+        }
+    }).then(response => {
+        renderWarehousesOptions(response.data.data);
+    }).catch(error => {
+        console.log(error);
+    });
+};
+
 //fetchUsers("льв");
 
-const cityInput = document.querySelector('.city-input');
+let cityInput = document.querySelector('.city-input');
 cityInput.addEventListener('input', fetchUsers);
+let warehouseInput = document.querySelector('.warehouse-input');
+let regionInput = document.querySelector('#order-region');
+regionInput.addEventListener('change', () => { cityInput.disabled = false; });
 
 function changeDataList(array) {
     let dataList = document.getElementById('goroda');
+    let region = document.getElementById('order-region');
     dataList.innerHTML = "";
     array.forEach(element => {
-        let option = document.createElement("option");
-        option.value = element.Present;
-        dataList.append(option);
-        console.log(element);
+        if (element.Area === region.value) {
+            let option = document.createElement("option");
+            option.value = element.MainDescription;
+            dataList.append(option);
+        }
     });
-    console.log(dataList.children[0].value)
-    console.log(dataList.childNodes.length)
     if (cityInput.value === dataList.children[0].value) {
         dataList.innerHTML = "";
+        document.getElementById('order-warehouse').disabled = false;
+        warehouseInput.dataset.ref = array[0].MainDescription;
+        getWarehouses();
     }
+}
+
+function renderWarehousesOptions(array) {
+    let orderWarehouse = document.getElementById('order-warehouse');
+    orderWarehouse.innerHTML = "";
+    array.forEach(element => {
+        let option = document.createElement("option");
+        option.value = element.Description;
+        option.innerText = element.Description;
+        orderWarehouse.append(option);
+    });
 }
