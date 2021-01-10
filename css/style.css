@@ -1732,6 +1732,9 @@
 .input-select[value=''] {
   background-color: black; }
 
+.input {
+  background-color: #fff; }
+
 html {
   font-size: 10px;
   scroll-behavior: smooth;
