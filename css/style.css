@@ -802,9 +802,7 @@
   -webkit-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none; }
+  -webkit-appearance: none; }
   .input:focus {
     border: 2px solid #22B6EA;
     -webkit-box-shadow: 0 0 5px #22B6EA;
@@ -1727,7 +1725,7 @@
     background-color: red; }
 
 .input-required {
-  color: red;
+  color: white;
   font-size: 100%;
   vertical-align: top;
   padding: 0 1px; }
