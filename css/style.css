@@ -1722,10 +1722,10 @@
     height: 400px;
     background-color: #fff; }
   .input--textarea:not([data-val=""]) {
-    background-color: red; }
+    background-color: #fff; }
 
 .input-required {
-  color: white;
+  color: red;
   font-size: 100%;
   vertical-align: top;
   padding: 0 1px; }
