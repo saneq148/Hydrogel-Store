@@ -5,7 +5,6 @@ const fetchUsers = (event) => {
         "calledMethod": "searchSettlements",
         "methodProperties": {
             "CityName": event.target.value,
-            "Area": "Волинська",
             "Limit": 5
         }
     }).then(response => {
