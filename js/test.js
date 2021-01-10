@@ -24,13 +24,13 @@ function changeDataList(array) {
     dataList.innerHTML = "";
     array.forEach(element => {
         let option = document.createElement("option");
-        option.value = element.MainDescription;
+        option.value = element.Present;
         dataList.append(option);
         console.log(element);
     });
     console.log(dataList.children[0].value)
     console.log(dataList.childNodes.length)
-    if (dataList.childNodes.length === 1 && cityInput.value === dataList.children[0].value) {
+    if (cityInput.value === dataList.children[0].value) {
         dataList.innerHTML = "";
     }
 }

@@ -801,7 +801,10 @@
           box-shadow: 0 0 1px #22B6EA;
   -webkit-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out; }
+  transition: all 0.1s ease-in-out;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
   .input:focus {
     border: 2px solid #22B6EA;
     -webkit-box-shadow: 0 0 5px #22B6EA;
