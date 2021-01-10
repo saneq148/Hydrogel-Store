@@ -128,8 +128,7 @@
                   <datalist id="goroda"></datalist>
                  <label for="order-warehouse" class="check-form__label">Відділення<span class="input-required">*</span></label>
                  <select name="warehouse" id="order-warehouse" class="input warehouse-input" disabled>
-                   <option value="1">1</option>
-                   <option value="1">2</option>
+                   <option value="">Виберіть відділення</option>
                  </select>
                  <label for="information" class="check-form__label">Коментар до замовлення:</label>
                  <textarea class="input input--textarea" name="info" id="information" minlength='0'></textarea>
