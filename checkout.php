@@ -154,14 +154,6 @@
                  <button type="submit" class="btn--highlited btn btn--primary">Замовити</button>
                </form>
                <div id="google-map"></div>
-               <div id='map' style='width: 400px; height: 300px;'></div>
-                <script>
-                mapboxgl.accessToken = 'pk.eyJ1Ijoic2FzaGFuaWtpdGluMTQ4IiwiYSI6ImNranZzcWlldzA4NXAyd21sYzBjYzl3aDMifQ.1e3gKvTts-KhxJ_kpTD-Tg';
-                var map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/streets-v11'
-                });
-                </script>
              </div>
            </div>
          </div>
