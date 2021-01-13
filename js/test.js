@@ -13,7 +13,6 @@ const fetchCities = (event) => {
         catch (e) {
             console.log(e);
         }
-        console.log(response);
     }).catch();
 };
 
@@ -27,6 +26,8 @@ const fetchWarehouses = () => {
     }).then(response => {
         renderWarehousesOptions(response.data.data);
         warehouseInput.disabled = false;
+        console.log(response.data.data);
+        setMapCoords(response.data.data);
 
     }).catch(error => {
         console.log(error);
@@ -88,5 +89,4 @@ for (let i = 0; i < citiesListItem.length; i++) {
     item.addEventListener('click', setCityInputFromDropdown);
 }
 
-
-
+setMapCoords(1, 2);

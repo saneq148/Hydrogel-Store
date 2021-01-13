@@ -4,15 +4,26 @@
  <!DOCTYPE html>
  <html lang="ua">
  <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Order</title>
-   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-   <link rel="stylesheet" href="/css/style.css">
-   <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Order</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABdUU-KNBwPsbhRQLfiEFkSxhKfawtD-0&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <script type="text/javascript" src="/js/maps.js"></script>
+    <style>
+      #google-map{
+        height: 300px;
+      }
+    </style>
  </head>
  <body>
    <div class="wrapper">
@@ -139,7 +150,7 @@
                  <label class="check-form__label">Після замовлення з вами зв’яжеться менеджер, який уточнить модель, місто доставки та інші деталі</label>
                  <button type="submit" class="btn--highlited btn btn--primary">Замовити</button>
                </form>
-               <iframe src="https://www.google.com/maps/embed/v1/view?key=AIzaSyABdUU-KNBwPsbhRQLfiEFkSxhKfawtD-0&center=-33.8569,151.2152&zoom=18&maptype=satellite" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+               <div id="google-map"></div>
              </div>
            </div>
          </div>
