@@ -1,6 +1,17 @@
 .brands {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  @include breakpoint($tabled-bp) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 0 5rem;
+    .brands__item {
+      height: 10rem;
+      img {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
 }
 .brands__item {
   display: flex;

@@ -1,4 +1,4 @@
-const fetchUsers = (event) => {
+const fetchCities = (event) => {
     axios.post('https://api.novaposhta.ua/v2.0/json/Address/searchSettlements/', {
         "modelName": "Address",
         "calledMethod": "searchSettlements",
@@ -8,49 +8,49 @@ const fetchUsers = (event) => {
         }
     }).then(response => {
         changeDataList(response.data.data[0].Addresses);
-    }).catch(error => {
-        console.log(error);
-    });
+    }).catch(error);
 };
 
-const getWarehouses = () => {
-    axios.post('https://api.novaposhta.ua/v2.0/json/Address/getWarehouses/', {
+const fetchWarehouses = () => {
+    axios.post('https://api.novaposhta.ua/v2.0/json/Address/fetchWarehouses/', {
         "modelName": "Address",
         "calledMethod": "getWarehouses",
         "methodProperties": {
-            "CityName": document.getElementById("order-warehouse").dataset.ref
+            "CityName": document.getElementById("cityNP").value
         }
     }).then(response => {
         renderWarehousesOptions(response.data.data);
+        warehouseInput.disabled = false;
+
     }).catch(error => {
         console.log(error);
     });
 };
 
-//fetchUsers("льв");
-
 let cityInput = document.querySelector('.city-input');
-cityInput.addEventListener('input', fetchUsers);
+cityInput.addEventListener('input', fetchCities);
 let warehouseInput = document.querySelector('.warehouse-input');
 let regionInput = document.querySelector('#order-region');
-regionInput.addEventListener('change', () => { cityInput.disabled = false; });
+regionInput.addEventListener('change', () => { cityInput.disabled = false; cityInput.value = ""; warehouseInput.disabled = true; warehouseInput.innerHTML = "<option value=''>Виберіть відділення</option>"; });
 
 function changeDataList(array) {
-    let dataList = document.getElementById('goroda');
+    let dropDownItems = document.querySelector('.cities-list');
     let region = document.getElementById('order-region');
-    dataList.innerHTML = "";
+    dropDownItems.innerHTML = "";
     array.forEach(element => {
         if (element.Area === region.value) {
-            let option = document.createElement("option");
-            option.value = element.MainDescription;
-            dataList.append(option);
+            let item = document.createElement("li");
+            item.innerHTML = element.MainDescription;
+            item.addEventListener('click', setCityInputFromDropdown);
+            dropDownItems.append(item);
         }
     });
-    if (cityInput.value === dataList.children[0].value) {
-        dataList.innerHTML = "";
-        document.getElementById('order-warehouse').disabled = false;
+    if (cityInput.value.toLowerCase() === dropDownItems.children[0].innerHTML.toLowerCase()) {
+        dropDownItems.innerHTML = "";
+        warehouseInput.disabled = false;
+        warehouseInput.innerHTML = "<option value=''>Зачекайте, завантажується...</option>"
         warehouseInput.dataset.ref = array[0].MainDescription;
-        getWarehouses();
+        fetchWarehouses();
     }
 }
 
@@ -64,3 +64,23 @@ function renderWarehousesOptions(array) {
         orderWarehouse.append(option);
     });
 }
+
+const dropDownMenu = document.getElementsByClassName('city-input__list')[0];
+cityInput.onfocus = () => { dropDownMenu.style.visibility = 'visible'; dropDownMenu.style.opacity = '1'; }
+cityInput.onblur = () => { setTimeout(() => dropDownMenu.style.visibility = 'hidden', 200) };
+
+const setCityInputFromDropdown = (event) => {
+    cityInput.value = event.target.innerHTML;
+    dropDownMenu.style.opacity = '0';
+    fetchWarehouses();
+}
+
+const citiesListItem = document.getElementsByClassName('cities-list__item');
+
+for (let i = 0; i < citiesListItem.length; i++) {
+    let item = citiesListItem[i];
+    item.addEventListener('click', setCityInputFromDropdown);
+}
+
+
+

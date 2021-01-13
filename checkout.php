@@ -123,8 +123,11 @@
                    <option value="Чернігівська">Чернігівська</option>
                    <option value="Чернівецька">Чернівецька</option>                   
                  </select>
-                 <label for="cityNP" class="check-form__label">Місто<span class="input-required">*</span></label>
-                 <input class="input city-input" name="gorodNp" list="goroda" id="cityNP" autocomplete="off" disabled>
+                  <label for="cityNP" class="check-form__label">Місто<span class="input-required">*</span></label>
+                  <div class="cities">
+                  <input class="input city-input" name="gorodNp" id="cityNP" autocomplete="off" placeholder="Наприклад, Київ" disabled>
+                    <ul class="cities-list city-input__list"></ul>
+                 </div>
                   <datalist id="goroda"></datalist>
                  <label for="order-warehouse" class="check-form__label">Відділення<span class="input-required">*</span></label>
                  <select name="warehouse" id="order-warehouse" class="input warehouse-input" disabled>
