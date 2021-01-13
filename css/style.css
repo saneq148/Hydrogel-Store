@@ -1745,11 +1745,24 @@
   background-color: black; }
 
 .input {
-  background-color: #fff; }
+  background-color: #fff;
+  padding: 0 1.5rem; }
   .input:disabled {
-    background-color: #F0F0F0;
     border: lightgray 1px solid;
-    opacity: 0.7; }
+    opacity: 0.7;
+    color: #ADADAD;
+    background: #F0F0F0; }
+
+select.input {
+  padding-right: 5rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url("../assets/icons/arrow.svg") no-repeat right white;
+  background-position: calc(100% - 15px) 1.1rem; }
+
+textarea.input {
+  padding: 1.2rem 1.5rem; }
 
 .cities {
   position: relative;

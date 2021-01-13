@@ -7,8 +7,14 @@ const fetchCities = (event) => {
             "Limit": 5
         }
     }).then(response => {
-        changeDataList(response.data.data[0].Addresses);
-    }).catch(error);
+        try {
+            changeDataList(response.data.data[0].Addresses);
+        }
+        catch (e) {
+            console.log(e);
+        }
+        console.log(response);
+    }).catch();
 };
 
 const fetchWarehouses = () => {

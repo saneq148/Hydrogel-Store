@@ -139,6 +139,7 @@
                  <label class="check-form__label">Після замовлення з вами зв’яжеться менеджер, який уточнить модель, місто доставки та інші деталі</label>
                  <button type="submit" class="btn--highlited btn btn--primary">Замовити</button>
                </form>
+               <iframe src="https://www.google.com/maps/embed/v1/view?key=AIzaSyABdUU-KNBwPsbhRQLfiEFkSxhKfawtD-0&center=-33.8569,151.2152&zoom=18&maptype=satellite" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
              </div>
            </div>
          </div>

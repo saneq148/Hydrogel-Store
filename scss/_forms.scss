@@ -23,11 +23,23 @@
 }
 .input {
     background-color: #fff;
+    padding: 0 1.5rem;
     &:disabled {
-        background-color: $grey-for-background;
+        //background-color: $grey-for-background;
         border: lighten($grey-for-border, 30%) 1px solid;
         opacity: 0.7;
+        color: $grey-for-text;
+        background: $grey-for-background;
     }
+}
+select.input {
+    padding-right: 5rem;
+    appearance: none;
+    background: url('../assets/icons/arrow.svg') no-repeat right white;
+    background-position: calc(100% - 15px) 1.1rem;
+}
+textarea.input {
+    padding: 1.2rem 1.5rem;
 }
 .cities {
     position: relative;
