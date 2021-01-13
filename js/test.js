@@ -26,7 +26,7 @@ const fetchWarehouses = () => {
     }).then(response => {
         renderWarehousesOptions(response.data.data);
         warehouseInput.disabled = false;
-        console.log(response.data.data);
+        console.log(response);
         setMapCoords(response.data.data);
 
     }).catch(error => {

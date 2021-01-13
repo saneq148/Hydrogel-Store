@@ -23,20 +23,26 @@ function setMapCoords(wareHouses) {
     };
     for (let i = 0; i < wareHouses.length; i++) {
         const warehouse = wareHouses[i];
-        let marker = new google.maps.Marker({
-            position: { lat: parseFloat(warehouse.Latitude), lng: parseFloat(warehouse.Longitude) },
-            map: map,
-            labelContent: "markerLabel",
-            title: warehouse.Description,
-            //icon: image,
-            label: {
-                text: warehouse.Number,
-                color: "#000000",
-                fontSize: "12px",
-                fontWeight: "bold"
-            },
-            zIndex: parseInt(warehouse.Number),
-        });
-        marker.addListener("hover")
+        if (warehouse.CategoryOfWarehouse !== "Postomat") {
+            let marker = new google.maps.Marker({
+                position: { lat: parseFloat(warehouse.Latitude), lng: parseFloat(warehouse.Longitude) },
+                map: map,
+                labelContent: "markerLabel",
+                title: warehouse.Description,
+                //icon: image,
+                label: {
+                    text: warehouse.Number,
+                    color: "#ffffff",
+                    fontSize: "12px",
+                    fontWeight: "bold"
+                },
+                zIndex: parseInt(warehouse.Number),
+            });
+            marker.addListener("click", logg)
+        }
     }
+}
+
+function logg() {
+    console.log(event.target.title);
 }
