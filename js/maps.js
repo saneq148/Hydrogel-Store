@@ -1,9 +1,9 @@
-function initMap() {
+/*function initMap() {
     const map = new google.maps.Map(document.getElementById("google-map"), {
         zoom: 15,
         center: { lat: 50.783026010700000, lng: 25.364062786100000 },
     });
-}
+}*/
 
 function setMapCoords(wareHouses) {
     const map = new google.maps.Map(document.getElementById("google-map"), {
@@ -28,12 +28,12 @@ function setMapCoords(wareHouses) {
             map: map,
             labelContent: "markerLabel",
             title: warehouse.Description,
-            icon: image,
+            //icon: image,
             label: {
                 text: warehouse.Number,
                 color: "#000000",
-                fontSize: "16px",
-                //fontWeight: "bold"
+                fontSize: "12px",
+                fontWeight: "bold"
             },
             zIndex: parseInt(warehouse.Number),
         });
