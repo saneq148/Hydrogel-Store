@@ -31,9 +31,9 @@ function setMapCoords(wareHouses) {
                 title: warehouse.Description,
                 //icon: image,
                 label: {
-                    text: warehouse.Number,
+                    text: "#" + warehouse.Number,
                     color: "#ffffff",
-                    fontSize: "12px",
+                    fontSize: "10px",
                     fontWeight: "bold"
                 },
                 zIndex: parseInt(warehouse.Number),
