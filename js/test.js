@@ -7,11 +7,8 @@ const fetchCities = (event) => {
             "Limit": 5
         }
     }).then(response => {
-        try {
+        if (response.data.data[0].length !== 0) {
             changeDataList(response.data.data[0].Addresses);
-        }
-        catch (e) {
-            console.log(e);
         }
     }).catch();
 };
@@ -26,8 +23,6 @@ const fetchWarehouses = () => {
     }).then(response => {
         renderWarehousesOptions(response.data.data);
         warehouseInput.disabled = false;
-        console.log(response);
-        setMapCoords(response.data.data);
 
     }).catch(error => {
         console.log(error);
@@ -52,12 +47,14 @@ function changeDataList(array) {
             dropDownItems.append(item);
         }
     });
-    if (cityInput.value.toLowerCase() === dropDownItems.children[0].innerHTML.toLowerCase()) {
-        dropDownItems.innerHTML = "";
-        warehouseInput.disabled = false;
-        warehouseInput.innerHTML = "<option value='' selected disabled hidden>Зачекайте, завантажується...</option>"
-        warehouseInput.dataset.ref = array[0].MainDescription;
-        fetchWarehouses();
+    if (dropDownItems.innerHTML !== "") {
+        if (cityInput.value.toLowerCase() === dropDownItems.children[0].innerHTML.toLowerCase()) {
+            dropDownItems.innerHTML = "";
+            warehouseInput.disabled = false;
+            warehouseInput.innerHTML = "<option value='' selected disabled hidden>Зачекайте, завантажується...</option>"
+            warehouseInput.dataset.ref = array[0].MainDescription;
+            fetchWarehouses();
+        }
     }
 }
 

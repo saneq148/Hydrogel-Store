@@ -1,6 +1,3 @@
-<?php
-  session_start();
- ?>
  <!DOCTYPE html>
  <html lang="ua">
  <head>
@@ -92,15 +89,15 @@
                </div>
                <form action="/testorder" method="get" class="form order-form">
                  <input type="text" name="total" value="<?=$total?>" style="display: none">
-                 <label for="order-model" class="check-form__label">Модель телефону:<span class="input-required">*</span></label>
+                 <label for="order-model" class="check-form__label">Модель телефону:</label>
                  <input class="input" type="text" name="model" id="order-name" value="" placeholder="Наприклад, Redmi Note 9" required>
                  <label for="order-name" class="check-form__label">Ваше ім’я<span class="input-required">*</span></label>
                  <input class="input" type="text" name="name" id="order-name" value="" placeholder="Наприклад, Володимир" required>
-                 <label for="order-phone" class="check-form__label">Ваш телефон<span class="input-required">*</span></label>
+                 <label for="order-phone" class="check-form__label">Ваш номер телефону<span class="input-required">*</span></label>
                  <input class="input" type="tel" name="phone" id="order-phone" value="" minlength="10" maxlength="20" placeholder="+380501032020" required>
                  <label for="order-region" class="check-form__label">Область<span class="input-required">*</span></label>
                  <select name="region" id="order-region" class="input input-select">
-                   <option value="none" selected disabled hidden>Виберіть</option>
+                   <option value="none" selected disabled hidden>Виберіть область</option>
                    <option value="Вінницька">Вінницька</option>
                    <option value="Волинська">Волинська</option>
                    <option value="Дніпропетровська">Дніпропетровська</option>
@@ -132,9 +129,9 @@
                     <ul class="cities-list city-input__list"></ul>
                  </div>
                   <datalist id="goroda"></datalist>
-                 <label for="order-warehouse" class="check-form__label">Відділення<span class="input-required">*</span></label>
+                 <label for="order-warehouse" class="check-form__label">Відділення:</label>
                  <select name="warehouse" id="order-warehouse" class="input warehouse-input" disabled>
-                   <option value="">Виберіть відділення</option>
+                   <option value="">Заповніть поле "місто"</option>
                  </select>
                  <label for="information" class="check-form__label">Коментар до замовлення:</label>
                  <textarea class="input input--textarea" name="info" id="information" minlength='0'></textarea>

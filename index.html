@@ -195,13 +195,13 @@
           <div class="content">
             <h1 class="main-header animate__animated animate-left">Перевірте, чи є у нас плівка <span
                 class="highlited-text">під ваш</span> гаджет:</h1>
-            <form action="" class="form check-form animate__animated animate-right">
+            <form action="/check" method="get" class="form check-form animate__animated animate-right">
               <label for="model" class="check-form__label">Введіть модель телефона:</label>
               <input class="input" type="text" name="model" id="model" value=""
                 placeholder="Наприклад, Redmi Note 9 pro" required>
               <label for="phone" class="check-form__label">Ваш телефон, щоб зразу оформити замовлення у випадку
                 наявності:</label>
-              <input class="input" type="phone" name="model" id="phone" value="" placeholder="+380501032020" required>
+              <input class="input" type="phone" name="phone" id="phone" value="" placeholder="+380501032020" required>
               <button type="submit" name="check" class="btn--highlited btn btn--primary">Перевірити</button>
             </form>
           </div>
@@ -211,7 +211,7 @@
         <div class="container">
           <div class="content">
             <h1 class="main-header animate__animated animate-right"><span class="highlited-text">Як поклеїти</span>
-              гідрогельову плівку на смартфон?</h1>
+              гідрогелеву плівку на смартфон?</h1>
             <p class="sub-header  animate__animated animate-left">Гідрогелеву плівку клеїти простіше, ніж скло. Щоб
               зробити все швидко і якісно, ​​варто дотримуватися цієї інструкції:</p>
             <div class="splash animate__animated animate-zoom video-2">
@@ -267,7 +267,7 @@
           <div class="content">
             <h1 class="main-header animate__animated animate-right">Зробити <span
                 class="highlited-text">замовлення</span> онлайн</h1>
-            <form action="" class="form order-form  animate__animated animate-left">
+            <form action="/quickorder" method="post" class="form order-form  animate__animated animate-left">
               <label for="order-model" class="check-form__label">Введіть модель телефона:</label>
               <input class="input" type="text" name="model" id="order-model" value=""
                 placeholder="Наприклад, Redmi Note 9 pro" required>
@@ -478,7 +478,7 @@
           <div class="content">
             <h1 class="main-header main-header--space animate__animated animate-left">Оформити <span
                 class="highlited-text">замовлення</span></h1>
-            <form action="" class="form order-form animate__animated animate-zoom">
+            <form action="/quickorder" method="post" class="form order-form animate__animated animate-zoom">
               <label for="footer-order-model" class="check-form__label">Введіть модель телефона:</label>
               <input class="input" type="text" name="model" id="footer-order-model" value=""
                 placeholder="Наприклад, Redmi Note 9 pro" required>

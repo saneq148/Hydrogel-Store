@@ -115,9 +115,9 @@ function cartIsEmpty() {
   let total = document.getElementsByClassName('cart-total')[0];
   let btn = document.getElementsByClassName('cart-order-btn')[0];
   if (cart.innerHTML === "") {
-    cart.innerHTML = "<div class='cart-is-empty'>Ваша корзина пуста</div>";
+    cart.innerHTML = "<div class='cart-is-empty'>Ваш кошик пустий</div>";
     total.innerHTML = "";
-    //btn.innerHTML = "";
+    btn.innerHTML = "";
     if (localStorage.getItem("cart") !== null) {
       if (JSON.parse(localStorage.getItem("cart")).length == 0) {
         localStorage.removeItem('cart');
