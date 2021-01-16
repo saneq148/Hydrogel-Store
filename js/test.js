@@ -88,5 +88,3 @@ for (let i = 0; i < citiesListItem.length; i++) {
     let item = citiesListItem[i];
     item.addEventListener('click', setCityInputFromDropdown);
 }
-
-setMapCoords(1, 2);

@@ -14,19 +14,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABdUU-KNBwPsbhRQLfiEFkSxhKfawtD-0&callback=initMap&libraries=&v=weekly"
-      defer
-    ></script>
-    <script type="text/javascript" src="/js/maps.js"></script>
-    <style>
-      #google-map{
-        height: 300px;
-      }
-    </style>
-
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
  </head>
  <body>
    <div class="wrapper">
@@ -103,8 +90,10 @@
                   }
                 ?>
                </div>
-               <form action="/order" method="post" class="form order-form">
+               <form action="/testorder" method="get" class="form order-form">
                  <input type="text" name="total" value="<?=$total?>" style="display: none">
+                 <label for="order-model" class="check-form__label">Модель телефону:<span class="input-required">*</span></label>
+                 <input class="input" type="text" name="model" id="order-name" value="" placeholder="Наприклад, Redmi Note 9" required>
                  <label for="order-name" class="check-form__label">Ваше ім’я<span class="input-required">*</span></label>
                  <input class="input" type="text" name="name" id="order-name" value="" placeholder="Наприклад, Володимир" required>
                  <label for="order-phone" class="check-form__label">Ваш телефон<span class="input-required">*</span></label>

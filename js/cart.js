@@ -110,7 +110,7 @@ function getDataBase() {
   return JSON.parse(localStorage.getItem("cart"));
 }
 
-function cartIsEmpty(){
+function cartIsEmpty() {
   let cart = document.getElementsByClassName('cart-items')[0];
   let total = document.getElementsByClassName('cart-total')[0];
   let btn = document.getElementsByClassName('cart-order-btn')[0];
@@ -128,7 +128,7 @@ function cartIsEmpty(){
 
 function order() {
   if (JSON.parse(localStorage.getItem('cart')).length > 0) {
-    document.cookie = `cart = ${localStorage.getItem('cart')}; max-age=${5 * 60}`;
+    document.cookie = `cart = ${localStorage.getItem('cart')}`;
     window.location.href = '/checkout';
   }
   else {
