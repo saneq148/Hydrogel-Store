@@ -10,15 +10,15 @@ include 'vars.php';
 
 
 $cookie = json_decode($_COOKIE["cart"]);
-$model = $_GET['model'];
-$name = $_GET['name'];
-$phone = $_GET['phone'];
-$region = $_GET['region'];
-$city = $_GET['gorodNp'];
-$warehouse = $_GET['warehouse'];
-$info = $_GET['info'];
+$model = $_POST['model'];
+$name = $_POST['name'];
+$phone = $_POST['phone'];
+$region = $_POST['region'];
+$city = $_POST['gorodNp'];
+$warehouse = $_POST['warehouse'];
+$info = $_POST['info'];
 
-if (!isset($_COOKIE["cart"]) || !isset($_GET['model']) || !isset($_GET['name']) || !isset($_GET['phone']) || !isset($_GET['region']) || !isset($_GET['gorodNp'])) {
+if (!isset($_COOKIE["cart"]) || !isset($_POST['model']) || !isset($_POST['name']) || !isset($_POST['phone']) || !isset($_POST['region']) || !isset($_POST['gorodNp'])) {
     header("HTTP/1.0 405 Method Not Allowed");
     exit("Error");
 }

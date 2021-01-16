@@ -87,7 +87,7 @@
                   }
                 ?>
                </div>
-               <form action="/testorder" method="get" class="form order-form">
+               <form action="/order" method="post" class="form order-form">
                  <input type="text" name="total" value="<?=$total?>" style="display: none">
                  <label for="order-model" class="check-form__label">Модель телефону:</label>
                  <input class="input" type="text" name="model" id="order-name" value="" placeholder="Наприклад, Redmi Note 9" required>
