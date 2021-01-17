@@ -51,6 +51,9 @@
           line-height: 5rem;
           border-radius: 27px;
           margin: 0 2rem 0 0;
+          &:hover {
+            background-color: rgba($primary, 0.01)!important;
+          }
         }
       }
       & .promo__text {

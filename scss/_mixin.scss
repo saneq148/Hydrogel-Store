@@ -3,3 +3,8 @@
     @content;
   }
 }
+@mixin pc() {
+  @media (hover: hover) { 
+    @content;
+   }
+}
