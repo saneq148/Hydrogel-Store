@@ -704,8 +704,10 @@
       .brands .brands__item {
         height: 10rem; }
         .brands .brands__item img {
-          width: auto;
-          height: auto; } }
+          max-width: auto;
+          width: 100px; }
+        .brands .brands__item:last-child {
+          display: none; } }
 
 .brands__item {
   display: -webkit-box;
@@ -1103,7 +1105,7 @@
   padding: 1rem 1.5rem;
   background: #fff;
   max-width: 70rem;
-  margin: auto; }
+  margin: 2rem auto; }
   .faq__item summary {
     background: #fff;
     outline: none;
@@ -1789,6 +1791,12 @@ textarea.input {
 
 .cities-list:empty {
   display: none; }
+
+.animate-right, .animate-zoom, .animate-left, .animate-bottom {
+  visibility: hidden; }
+
+.animate__fadeInRight, .animate__zoomIn, .animate__fadeInLeft, .animate__fadeInDown {
+  visibility: visible; }
 
 html {
   font-size: 10px;

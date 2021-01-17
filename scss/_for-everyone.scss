@@ -7,8 +7,12 @@
     .brands__item {
       height: 10rem;
       img {
-        width: auto;
-        height: auto;
+        max-width: auto;
+        width: 100px;
+        //height: auto;
+      }
+      &:last-child {
+        display: none;
       }
     }
   }

@@ -1,0 +1,7 @@
+.animate-right, .animate-zoom, .animate-left, .animate-bottom {
+    visibility: hidden;
+}
+
+.animate__fadeInRight, .animate__zoomIn, .animate__fadeInLeft, .animate__fadeInDown {
+    visibility: visible;
+}
