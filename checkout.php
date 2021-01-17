@@ -1,14 +1,20 @@
  <!DOCTYPE html>
  <html lang="ua">
  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HWNL0XPD5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-0HWNL0XPD5');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Order</title>
+    <title>Замовити гідрогельову плівку</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
  </head>
  <body>
    <div class="wrapper">
@@ -144,16 +150,7 @@
        </section>
      </main>
    </div>
-   <script type="text/javascript">
-     var burger = document.querySelector(".burger");
-     var nav = document.querySelector(".navigation");
-     var body = document.querySelector("body");
-     burger.onclick = function () {
-       burger.classList.toggle('burger--open');
-       nav.classList.toggle('navigation--open');
-       body.classList.toggle('scroll-lock');
-     }
-   </script>
-   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="/js/burger.js"></script>
+   <script src="/js/axios/axios.min.js"></script>
    <script type="module" src="/js/test.js"></script>
  </body>
