@@ -25,7 +25,7 @@ $body = "
     Номер телефону: {$phone}
 </div>
 <div class='order-name'>
-    Номер телефону: {$name}
+    Ім’я: {$name}
 </div>";
 
 $email = 'saneq148619@gmail.com';

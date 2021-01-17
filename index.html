@@ -78,7 +78,8 @@
           </div>
           <div class="promo__buttons">
             <a href="#buy" class="btn--highlited btn btn--primary btn-a animate__animated animate-right">Обери свою</a>
-            <a href="#bonus" class="btn--transparent btn--primary btn-a animate__animated animate-right">Отримати
+            <a href="#bonus"
+              class="btn--transparent btn--primary btn-a animate__animated animate-right btn-bonus">Отримати
               бонуси</a>
           </div>
         </div>
@@ -222,10 +223,11 @@
             <form action="/check" method="get" class="form check-form animate__animated animate-right">
               <label for="model" class="check-form__label">Введіть модель телефона:</label>
               <input class="input" type="text" name="model" id="model" value=""
-                placeholder="Наприклад, Redmi Note 9 pro" required>
+                placeholder="Наприклад, Redmi Note 9 pro" minlength="3" required>
               <label for="phone" class="check-form__label">Ваш телефон, щоб зразу оформити замовлення у випадку
                 наявності:</label>
-              <input class="input" type="phone" name="phone" id="phone" value="" placeholder="+380501032020" required>
+              <input class="input input-phone" type="tel" name="phone" id="phone" value="" placeholder="+380501032020"
+                minlength="10" maxlength="10" required>
               <button type="submit" name="check" class="btn--highlited btn btn--primary">Перевірити</button>
             </form>
           </div>
@@ -294,13 +296,13 @@
             <form action="/quickorder" method="post" class="form order-form  animate__animated animate-left">
               <label for="order-model" class="check-form__label">Введіть модель телефона:</label>
               <input class="input" type="text" name="model" id="order-model" value=""
-                placeholder="Наприклад, Redmi Note 9 pro" required>
+                placeholder="Наприклад, Redmi Note 9 pro" minlength="3" required>
               <label for="order-name" class="check-form__label">Ваше ім’я:</label>
-              <input class="input" type="text" name="name" id="order-name" value="" placeholder="Наприклад, Володимир"
-                required>
+              <input class="input" type="text" name="name" id="order-name" value="" minlength="3"
+                placeholder="Наприклад, Володимир" required>
               <label for="order-phone" class="check-form__label">Ваш телефон:</label>
-              <input class="input" type="phone" name="phone" id="order-phone" value="" placeholder="+380501032020"
-                required>
+              <input class="input input-phone" type="tel" name="phone" id="order-phone" value="" minlength="10"
+                maxlength="10" placeholder="+380501032020" required>
               <button type="submit" name="check"
                 class="btn--highlited btn btn--primary animate__animated animate-right btn--form">Замовити</button>
             </form>
@@ -564,13 +566,13 @@
             <form action="/quickorder" method="post" class="form order-form animate__animated animate-zoom">
               <label for="footer-order-model" class="check-form__label">Введіть модель телефона:</label>
               <input class="input" type="text" name="model" id="footer-order-model" value=""
-                placeholder="Наприклад, Redmi Note 9 pro" required>
+                placeholder="Наприклад, Redmi Note 9 pro" minlength="3" required>
               <label for="footer-order-name" class="check-form__label">Ваше ім’я:</label>
-              <input class="input" type="text" name="name" id="footer-order-name" value=""
+              <input class="input" type="text" name="name" minlength="3" id="footer-order-name" value=""
                 placeholder="Наприклад, Володимир" required>
               <label for="footer-order-phone" class="check-form__label">Ваш телефон:</label>
-              <input class="input" type="phone" name="phone" id="footer-order-phone" value=""
-                placeholder="+380501032020" required>
+              <input class="input input-phone" type="tel" name="phone" id="footer-order-phone" value=""
+                placeholder="+380501032020" minlength="10" maxlength="10" required>
               <button type="submit" name="check" class="btn--highlited btn btn--primary btn--form">Замовити</button>
             </form>
           </div>
@@ -607,15 +609,21 @@
       </div>
     </div>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/slick/slick.min.js"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script type="text/javascript" src="/js/slider.js"></script>
-  <script type="text/javascript" src="/js/animations.js"></script>
-  <script type="text/javascript" src="/js/header.js"></script>
-  <script type="text/javascript" src="/js/burger.js"></script>
-  <script type="text/javascript" src="/js/popup.js"></script>
-  <script type="text/javascript" src="/js/countdown.js"></script>
+  <script src="/js/jquery/jquery-3.5.1.min.js"></script>
+  <script src="/js/jquery.maskedinput.js"></script>
+  <script type="text/javascript">
+    jQuery(function ($) {
+      $(".input-phone").mask("+38(999) 999-9999");
+    });
+  </script>
+  <script src="/js/slick/slick.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="/js/slider.js"></script>
+  <script src="/js/animations.js"></script>
+  <script src="/js/header.js"></script>
+  <script src="/js/burger.js"></script>
+  <script src="/js/popup.js"></script>
+  <script src="/js/countdown.js"></script>
 </body>
 
 </html>

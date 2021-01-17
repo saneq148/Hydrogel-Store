@@ -22,7 +22,7 @@ if (!isset($_COOKIE["cart"]) || !isset($_POST['model']) || !isset($_POST['name']
     header("HTTP/1.0 405 Method Not Allowed");
     exit("Error");
 }
-if ($model === "" || $name === "" || $phone === "" || $region === "" || $city === "") {
+if ($name === "" || $phone === "" || $region === "" || $city === "") {
     header("HTTP/1.0 400 Bad Request");
     exit("Error");
 }

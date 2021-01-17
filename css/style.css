@@ -377,6 +377,9 @@
 .btn--black-text {
   color: #000; }
 
+.btn-bonus {
+  display: none; }
+
 .promo {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("../assets/img/header-bg.jpg");
   background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/header-bg.jpg");

@@ -90,11 +90,11 @@
                <form action="/order" method="post" class="form order-form">
                  <input type="text" name="total" value="<?=$total?>" style="display: none">
                  <label for="order-model" class="check-form__label">Модель телефону:</label>
-                 <input class="input" type="text" name="model" id="order-name" value="" placeholder="Наприклад, Redmi Note 9" required>
+                 <input class="input" type="text" name="model" id="order-name" value="" placeholder="Наприклад, Redmi Note 9">
                  <label for="order-name" class="check-form__label">Ваше ім’я<span class="input-required">*</span></label>
-                 <input class="input" type="text" name="name" id="order-name" value="" placeholder="Наприклад, Володимир" required>
+                 <input class="input" type="text" name="name" id="order-name" value="" placeholder="Наприклад, Володимир">
                  <label for="order-phone" class="check-form__label">Ваш номер телефону<span class="input-required">*</span></label>
-                 <input class="input" type="tel" name="phone" id="order-phone" value="" minlength="10" maxlength="20" placeholder="+380501032020" required>
+                 <input class="input" type="tel" name="phone" id="order-phone" value="" placeholder="+380501032020">
                  <label for="order-region" class="check-form__label">Область<span class="input-required">*</span></label>
                  <select name="region" id="order-region" class="input input-select">
                    <option value="none" selected disabled hidden>Виберіть область</option>
