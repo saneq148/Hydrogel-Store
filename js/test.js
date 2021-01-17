@@ -51,7 +51,7 @@ function changeDataList(array) {
         if (cityInput.value.toLowerCase() === dropDownItems.children[0].innerHTML.toLowerCase()) {
             dropDownItems.innerHTML = "";
             warehouseInput.disabled = false;
-            warehouseInput.innerHTML = "<option value='' selected disabled hidden>Зачекайте, завантажується...</option>"
+            warehouseInput.innerHTML = "<option value='' selected disabled hidden>Пошук...</option>"
             warehouseInput.dataset.ref = array[0].MainDescription;
             fetchWarehouses();
         }

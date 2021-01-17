@@ -30,6 +30,7 @@
     "merge-stream": "^1.0.1"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "axios": "^0.21.1"
   }
 }

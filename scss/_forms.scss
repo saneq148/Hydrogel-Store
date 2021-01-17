@@ -24,6 +24,7 @@
 .input {
     background-color: #fff;
     padding: 0 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     &:disabled {
         //background-color: $grey-for-background;
         border: lighten($grey-for-border, 30%) 1px solid;

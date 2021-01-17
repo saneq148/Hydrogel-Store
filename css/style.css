@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("../fonts/lato/lato.css");
 .promo {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("../assets/img/header-bg.jpg");
   background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/header-bg.jpg");
@@ -110,7 +111,7 @@
       margin-bottom: 1.5rem; }
     .promo__header h2 {
       font-size: 1.8rem;
-      font-weight: lighter;
+      font-weight: 500;
       width: 90%; }
 
 .promo-counter {
@@ -491,7 +492,7 @@
       margin-bottom: 1.5rem; }
     .promo__header h2 {
       font-size: 1.8rem;
-      font-weight: lighter;
+      font-weight: 500;
       width: 90%; }
 
 .promo-counter {
@@ -531,7 +532,8 @@
   display: block;
   width: 100%;
   background-color: #F0F0F0;
-  z-index: 5; }
+  z-index: 5;
+  font-family: Arial, sans-serif; }
   .header.sticky {
     position: fixed;
     background-color: #f0f0f0; }
@@ -1751,7 +1753,8 @@
 
 .input {
   background-color: #fff;
-  padding: 0 1.5rem; }
+  padding: 0 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
   .input:disabled {
     border: lightgray 1px solid;
     opacity: 0.7;
@@ -1810,7 +1813,8 @@ html {
   text-rendering: optimizeLegibility; }
 
 body {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
   body.scroll-lock {
     overflow-y: hidden; }
 
@@ -1818,8 +1822,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif; }
+  padding: 0; }
 
 .js-disabled {
   height: 100vh;
@@ -1850,9 +1853,9 @@ body {
   padding: 0 2rem; }
 
 .main-header {
-  font: 2.6rem "Lato", sans-serif;
+  font-size: 2.6rem;
   text-align: center;
-  font-weight: bold;
+  font-weight: 700;
   padding: 5rem 1rem 3rem; }
   .main-header--space {
     padding-top: 10rem; }
@@ -1897,7 +1900,7 @@ body {
 
 .highlited-text {
   color: #22B6EA;
-  font-weight: 600; }
+  font-weight: 800; }
 
 .section--black {
   background-color: #1F1F1F;
