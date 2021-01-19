@@ -39,7 +39,7 @@ $mail->Port       = 465;
 $mail->Priority    = 3;
 $mail->CharSet     = 'UTF-8';
 $mail->Encoding    = '8bit';
-$mail->Subject     = "Поле Зробити замовлення онлайн (середина):";
+$mail->Subject     = "Швидке замовлення";
 $mail->ContentType = "text/html; charset=utf-8\r\n";
 $mail->Username   = "saneq148619@gmail.com";
 $mail->Password   = $pass;

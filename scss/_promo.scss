@@ -1,11 +1,22 @@
 .promo {
-  background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../assets/img/header-bg.jpg');
-  background-size: cover;
+  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('../assets/promo/promo-mobile.webp');
   background-position: center;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  //overflow: hidden;
+  @include breakpoint($small-bp) {
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('../assets/promo/promo.webp');
+    background-position: center;
+    background-size: cover;
+  }
+  @include breakpoint($pc-bp) {
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('../assets/promo/promo-large.webp');
+    background-position: center;
+    background-size: cover;
+  }
   &__bonus {
     font-size: 2rem;
     color: white;
@@ -18,9 +29,6 @@
   }
   @include breakpoint ($pc-bp) {
     min-height: 100vh;
-  }
-  @include breakpoint ($tabled-bp) {
-    background-attachment: fixed;
   }
   .container {
     display: flex;

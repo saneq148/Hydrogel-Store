@@ -5,7 +5,8 @@ let gulp = require('gulp'),
   rename = require('gulp-rename'),
   postcss = require('gulp-postcss'),
   autoprefixer = require('autoprefixer'),
-  browserSync = require('browser-sync').create()
+  browserSync = require('browser-sync').create(),
+  cleanCSS = require('gulp-clean-css');
 
 const paths = {
   scss: {
@@ -32,6 +33,7 @@ function styles () {
   return gulp.src([paths.scss.src])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(postcss([autoprefixer({
       browsers: [
         'Chrome >= 35',

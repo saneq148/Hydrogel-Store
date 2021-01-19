@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
   $('.comments-wrapper').slick({
     slidesToShow: 2,
     slidesToScroll: 2,
@@ -7,7 +7,7 @@ $(document).ready(function(){
     autoplaySpeed: 2000,
     dots: true,
     infinite: true,
-    adaptiveHeight: true,
+    //adaptiveHeight: true,
     responsive: [
       {
         breakpoint: 960,

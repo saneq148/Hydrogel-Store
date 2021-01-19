@@ -27,14 +27,16 @@
 }
 .btn--primary {
   border-radius: 5px;
-  width: 21rem;
+  min-width: 21rem;
+  max-width: fit-content;
+  padding: 0 2rem;
   margin: 2rem auto;
   font-weight: 700;
   font-size: 2rem;
   text-shadow: 1px 1px 1px rgba($black, 0.2);
 }
 .btn--buy {
-  width: 100%;
+  min-width: 100%;
   background-color: $black;
   transition: all .3s ease-in-out;
   color: white;
@@ -52,7 +54,7 @@
   }
 }
 .btn--buy-cart {
-  width: 100%;
+  min-width: 100%;
   background-color: transparent;
   color: #444;
   height: 6rem;
