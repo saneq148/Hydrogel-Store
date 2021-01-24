@@ -48,7 +48,7 @@ $mail->isHTML(true);
 $mail->Body = $body.'IP: '.$_SERVER['REMOTE_ADDR'];
 $mail->WordWrap = 50;
 $mail->AddAddress($email);
-//$mail->AddAddress('Begezaaaa@gmail.com');
+$mail->AddAddress('Begezaaaa@gmail.com');
 if(!$mail->send()) {
     echo "Помилка, будь ласка, зв’яжіться з нами <a href='mailto:begezaaaa@gmail.com'>begezaaaa@gmail.com</a><br>Деталі:".$body;
     exit;

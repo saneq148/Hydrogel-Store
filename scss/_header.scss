@@ -32,9 +32,11 @@
   display: flex;
   align-items: center;
   color: $primary;
+  width: 100%;
+  justify-content: space-between;
 }
 .burger {
-  margin-left: 2rem;
+  //margin-left: 2rem;
   height: 30px;
   width: 30px;
   display: flex;
