@@ -89,9 +89,9 @@
         <main class="main">
             <section class="section-success">
                 <div class='container'>
-                    <h1 class="main-header">Замовлення прийнято</h1>
-                    <p class="sub-header">Наш менеджер зв’яжеться з вами в найближчий термін.</p>
-                    <a href="/" class="btn--transparent btn--black-text btn btn--primary btn--center btn-a">Повернутися на головну</a>
+                    <h1 class="main-header">Заказ принят</h1>
+                    <p class="sub-header">Наш менеджер свяжется с вами в ближайший сроки.</p>
+                    <a href="/" class="btn--transparent btn--black-text btn btn--primary btn--center btn-a">Вернуться на главную</a>
                 </div>
             </section>
         </main>

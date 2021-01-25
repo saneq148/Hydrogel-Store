@@ -1,0 +1,12 @@
+.promo-counter__days:after {
+      content: "Дней";
+    }
+    .promo-counter__hours:after {
+      content: "Часов";
+    }
+    .promo-counter__minutes:after {
+      content: "Минут";
+    }
+    .promo-counter__seconds:after {
+      content: "Секунд";
+    }

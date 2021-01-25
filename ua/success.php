@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html lang="ua">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Cart</title>
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="/js/cart.js"></script>
-  <style>
-    .cart-icon {
-      display: none;
-    }
-  </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HWNL0XPD5"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-0HWNL0XPD5');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Магазин ">
+    <meta name="keywords"
+    content="гідрогелева плівка купити гідрогелеву плівку захисне скло захист смартфона смартфон телефон для телефона">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/app/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/app/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/app/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/app/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/app/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/app/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/app/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/app/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/app/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/app/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/app/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/app/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/app/favicon-16x16.png">
+    <link rel="manifest" href="/assets/app/manifest.json">
+    <meta name="msapplication-TileColor" content="#22B6EA">
+    <meta name="msapplication-TileImage" content="/assets/app/ms-icon-144x144.png">
+    <meta name="theme-color" content="#22B6EA">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/js/slick/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="/js/store.js" async></script>
+    <title>Замовлення прийнято</title>
 </head>
-
 <body>
-  <div class="wrapper">
+    <div class="wrapper">
     <header class="header" id="header">
       <div class="container">
         <div class="header-nav">
@@ -64,22 +86,18 @@
         </div>
       </div>
     </header>
-    <main class="main">
-      <section class="section-cart">
-        <div class="container">
-          <div class="content">
-            <div class="cart">
-              <h1 class="main-header">Корзина</h1>
-              <div class="cart-items"></div>
-              <div class="cart-total">Общая стоимость: <span class="cart__price">0</span></div>
-              <div class="cart-order-btn"><a class="btn--highlited btn btn--primary btn--center btn-a"
-                  onclick="order()">Оформить заказ</a></div>
-            </div>
-            <a href="/" class="btn--transparent btn--black-text btn btn--primary btn--center btn-a">На главную</a>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-  <script type="text/javascript" src="/js/burger.js"></script>
+        <main class="main">
+            <section class="section-success">
+                <div class='container'>
+                    <h1 class="main-header">Замовлення прийнято</h1>
+                    <p class="sub-header">Наш менеджер зв’яжеться з вами в найближчий термін.</p>
+                    <a href="/ua" class="btn--transparent btn--black-text btn btn--primary btn--center btn-a">Повернутися на головну</a>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        localStorage.removeItem('cart');
+    </script>
 </body>
+</html>

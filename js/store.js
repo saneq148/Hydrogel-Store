@@ -1,18 +1,18 @@
 if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready);
+  document.addEventListener('DOMContentLoaded', ready);
 } else {
   ready();
 }
 function ready() {
   let addToCartButtons = document.getElementsByClassName('btn--buy');
   for (let i = 0; i < addToCartButtons.length; ++i) {
-        let cartButton = addToCartButtons[i];
-        cartButton.addEventListener('click', () => { addToCartClicked(); location.href="/cart"; })
+    let cartButton = addToCartButtons[i];
+    cartButton.addEventListener('click', () => { addToCartClicked(); location.href = "cart"; })
   }
   let buyButtons = document.getElementsByClassName('btn--buy-cart');
   for (let i = 0; i < buyButtons.length; ++i) {
-        let buyButton = buyButtons[i];
-        buyButton.addEventListener('click', addToCartClicked);
+    let buyButton = buyButtons[i];
+    buyButton.addEventListener('click', addToCartClicked);
   }
   getTotalCount()
 }
@@ -41,7 +41,7 @@ function addToCartClicked() {
   const img = shopItem.getElementsByClassName('buy__item-img')[0].children[0].src
   if (localStorage.getItem("cart") !== null)
     cart = JSON.parse(localStorage.getItem("cart"))
-  var itemAlreadyInCart = cart.filter(function(elem, index) {
+  var itemAlreadyInCart = cart.filter(function (elem, index) {
     if (elem.item === item) {
       elem.count++;
       cart.splice(index, 1, elem);

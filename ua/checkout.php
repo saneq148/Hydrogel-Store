@@ -1,5 +1,5 @@
  <!DOCTYPE html>
- <html lang="ru">
+ <html lang="ua">
  <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HWNL0XPD5"></script>
     <script>
@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Заказать гидрогелевую пленку</title>
+    <title>Замовити гідрогельову плівку</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css">
@@ -34,12 +34,12 @@
               <li class="nav__item social-links">
                 <div class="links__item">
                   <a href="#">
-                    <img src="assets/icons/instagram.svg" alt="">
+                    <img src="/assets/icons/instagram.svg" alt="">
                   </a>
                 </div>
                 <div class="links__item">
                   <a href="#">
-                    <img src="assets/icons/prom.png" alt="">
+                    <img src="/assets/icons/prom.png" alt="">
                   </a>
                 </div>
               </li>
@@ -66,7 +66,7 @@
          <div class="container">
              <div class="content">
                <div class="checkout">
-               <h1 class="main-header">Сделать <span class="highlited-text">заказ</span> онлайн</h1>
+               <h1 class="main-header">Зробити <span class="highlited-text">замовлення</span> онлайн</h1>
                <div class="items-in-cart">
                 <?php 
                   $cart = json_decode($_COOKIE["cart"]);
@@ -88,7 +88,7 @@
                       $cost = $value->{"count"} * $value->{"price"};
                       $totalCount = $totalCount + $cost;
                     }
-                    echo "<div class='total-price'><p>Общая стоимость: <span>$totalCount грн.</span></p></div>";
+                    echo "<div class='total-price'><p>Загальна вартість: <span>$totalCount грн.</span></p></div>";
                   } 
                   else {
                     http_response_code(400);
@@ -97,57 +97,57 @@
                </div>
                <form action="/order" method="post" class="form order-form">
                  <input type="text" name="total" value="<?=$total?>" style="display: none">
-                 <label for="order-model" class="check-form__label">Модель телефона:</label>
-                 <input class="input" type="text" name="model" id="order-name" value="" placeholder="Например, Redmi Note 9">
-                 <label for="order-name" class="check-form__label">Ваше имя<span class="input-required">*</span></label>
-                 <input class="input" type="text" name="name" id="order-name" value="" placeholder="Например, Владимир" required>
-                 <label for="order-phone" class="check-form__label">Ваш номер телефона<span class="input-required">*</span></label>
+                 <label for="order-model" class="check-form__label">Модель телефону:</label>
+                 <input class="input" type="text" name="model" id="order-name" value="" placeholder="Наприклад, Redmi Note 9">
+                 <label for="order-name" class="check-form__label">Ваше ім’я<span class="input-required">*</span></label>
+                 <input class="input" type="text" name="name" id="order-name" value="" placeholder="Наприклад, Володимир" required>
+                 <label for="order-phone" class="check-form__label">Ваш номер телефону<span class="input-required">*</span></label>
                  <input class="input input-phone" type="tel" name="phone" id="order-phone" value="" placeholder="+380501032020" required minlength="10" minlength="10">
                  <label for="order-region" class="check-form__label">Область<span class="input-required">*</span></label>
                  <select name="region" id="order-region" class="input input-select" required>
-                   <option value="none" selected disabled hidden>Выберите область</option>
-                   <option value="Вінницька">Винницкая</option>
-                   <option value="Волинська">Волынская</option>
-                   <option value="Дніпропетровська">Днепропетровская</option>
-                   <option value="Донецька">Донецкая</option>
-                   <option value="Житомирська">Житомирская</option>
-                   <option value="Закарпатська">Закарпатская</option>
-                   <option value="Запорізька">Запорожская</option>
-                   <option value="Івано-Франківська">Ивано-Франковская</option>
-                   <option value="Київська">Киевская</option>
-                   <option value="Кіровоградська">Кировоградская</option>
-                   <option value="Луганська">Луганская</option>
-                   <option value="Львівська">Львовская</option>
-                   <option value="Миколаївська">Николаевская</option>
-                   <option value="Одеська">Одесская</option>
-                   <option value="Полтавська">Полтавская</option>
-                   <option value="Рівненська">Ровенская</option>
-                   <option value="Сумська">Сумская</option>
-                   <option value="Тернопільська">Тернопольская</option>
-                   <option value="Харківська">Харьковская</option>
-                   <option value="Херсонська">Херсонская</option>
-                   <option value="Хмельницька">Хмельницкая</option>
-                   <option value="Черкаська">Черкаская</option>
-                   <option value="Чернігівська">Черниговская</option>
-                   <option value="Чернівецька">Черновицкая</option>                   
+                   <option value="none" selected disabled hidden>Виберіть область</option>
+                   <option value="Вінницька">Вінницька</option>
+                   <option value="Волинська">Волинська</option>
+                   <option value="Дніпропетровська">Дніпропетровська</option>
+                   <option value="Донецька">Донецька</option>
+                   <option value="Житомирська">Житомирська</option>
+                   <option value="Закарпатська">Закарпатська</option>
+                   <option value="Запорізька">Запорізька</option>
+                   <option value="Івано-Франківська">Івано-Франківська</option>
+                   <option value="Київська">Київська</option>
+                   <option value="Кіровоградська">Кіровоградська</option>
+                   <option value="Луганська">Луганська</option>
+                   <option value="Львівська">Львівська</option>
+                   <option value="Миколаївська">Миколаївська</option>
+                   <option value="Одеська">Одеська</option>
+                   <option value="Полтавська">Полтавська</option>
+                   <option value="Рівненська">Рівненська</option>
+                   <option value="Сумська">Сумська</option>
+                   <option value="Тернопільська">Тернопільська</option>
+                   <option value="Харківська">Харківська</option>
+                   <option value="Херсонська">Херсонська</option>
+                   <option value="Хмельницька">Хмельницька</option>
+                   <option value="Черкаська">Черкаська</option>
+                   <option value="Чернігівська">Чернігівська</option>
+                   <option value="Чернівецька">Чернівецька</option>                   
                  </select>
-                  <label for="cityNP" class="check-form__label">Город<span class="input-required">*</span></label>
+                  <label for="cityNP" class="check-form__label">Місто<span class="input-required">*</span></label>
                   <div class="cities">
-                  <input class="input city-input" name="gorodNp" id="cityNP" autocomplete="off" placeholder='Например, "Київ"' disabled required>
+                  <input class="input city-input" name="gorodNp" id="cityNP" autocomplete="off" placeholder="Наприклад, Київ" disabled required>
                     <ul class="cities-list city-input__list"></ul>
                  </div>
                   <datalist id="goroda"></datalist>
-                 <label for="order-warehouse" class="check-form__label">Отделение:</label>
+                 <label for="order-warehouse" class="check-form__label">Відділення:</label>
                  <select name="warehouse" id="order-warehouse" class="input warehouse-input" disabled>
-                   <option value="">Заполните поле "город"</option>
+                   <option value="">Заповніть поле "місто"</option>
                  </select>
-                 <label for="information" class="check-form__label">Коментарий к заказу:</label>
+                 <label for="information" class="check-form__label">Коментар до замовлення:</label>
                  <textarea class="input input--textarea" name="info" id="information" minlength='0'></textarea>
-                 <label class="check-form__label"><span class="input-required">*</span> — обязательно</label>
-                 <label class="check-form__label">После заказа с вами свяжется менеджер, который уточнит модель, город доставки и другие детали</label>
-                 <button type="submit" class="btn--highlited btn btn--primary">Заказать</button>
+                 <label class="check-form__label"><span class="input-required">*</span> — обов’язково</label>
+                 <label class="check-form__label">Після замовлення з вами зв’яжеться менеджер, який уточнить модель, місто доставки та інші деталі</label>
+                 <button type="submit" class="btn--highlited btn btn--primary">Замовити</button>
                </form>
-               <a href="/" class="btn--transparent btn--black-text btn btn--primary btn--center btn-a">На главную</a>
+               <a href="/ua" class="btn--transparent btn--black-text btn btn--primary btn--center btn-a">На головну</a>
                <div id="google-map"></div>
              </div>
            </div>

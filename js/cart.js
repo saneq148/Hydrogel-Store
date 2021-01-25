@@ -115,7 +115,7 @@ function cartIsEmpty() {
   let total = document.getElementsByClassName('cart-total')[0];
   let btn = document.getElementsByClassName('cart-order-btn')[0];
   if (cart.innerHTML === "") {
-    cart.innerHTML = "<div class='cart-is-empty'>Ваш кошик пустий</div>";
+    cart.innerHTML = "<div class='cart-is-empty'>Ваша корзина пуста</div>";
     total.innerHTML = "";
     btn.innerHTML = "";
     if (localStorage.getItem("cart") !== null) {
@@ -129,7 +129,7 @@ function cartIsEmpty() {
 function order() {
   if (JSON.parse(localStorage.getItem('cart')).length > 0) {
     document.cookie = `cart = ${localStorage.getItem('cart')}`;
-    window.location.href = '/checkout';
+    window.location.href = 'checkout';
   }
   else {
     alert("Корзина пуста");
