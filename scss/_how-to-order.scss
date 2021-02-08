@@ -1,9 +1,9 @@
 .order-item {
   display: flex;
-  justify-content: center;
+  //justify-content: space-between;
   padding: 3rem 2rem;
   max-width: 40rem;
-  margin: auto;
+  //margin: auto;
   &__icon {
     margin: auto 2rem auto 0;
   }

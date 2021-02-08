@@ -35,7 +35,8 @@ html {
 }
 body {
   background-color: #1F1F1F;
-  color: #444;
+  color: $black;
+  overflow-x: hidden;
   font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   &.scroll-lock {
     overflow-y: hidden;
@@ -144,6 +145,9 @@ main {
 }
 .to-animate {
   opacity: 0;
+}
+section {
+  overflow-x: hidden;
 }
 
 :root

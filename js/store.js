@@ -58,7 +58,6 @@ function addToCartClicked() {
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
-  console.log(cart);
   getTotalCount();
 }
 function getTotalCount() {
