@@ -79,7 +79,8 @@ main {
 }
 .content {
   position: relative;
-  padding: 0 2rem
+  padding: 0 2rem;
+  overflow-x: hidden;
 }
 .main-header {
   top: 70px;
@@ -145,9 +146,6 @@ main {
 }
 .to-animate {
   opacity: 0;
-}
-section {
-  overflow-x: hidden;
 }
 
 :root
